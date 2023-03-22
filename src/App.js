@@ -1,11 +1,12 @@
 import React from 'react';
-
+import Main from './components/MainComponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   
   return (
     <div>
-      <h1>Lets make a E-HMS App</h1>
+      <Main />
     </div>
   );
 }
