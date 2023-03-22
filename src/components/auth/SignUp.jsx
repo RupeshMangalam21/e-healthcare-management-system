@@ -3,17 +3,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../style/LogIn.css';
 import{auth} from '../../lib/init-firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import {Link} from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 
-export default function LogIn() {
+export default function SignUp() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
     function handleSubmit(e){
         e.preventDefault();
-        signInWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
+        createUserWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
             console.log(useCredentials);
         }).catch((error) =>{
             console.log(error);
@@ -37,14 +36,10 @@ export default function LogIn() {
       </Form.Group>
       <div className="log-btn">
          <Button className="lg-btn"  type="submit">
-        login
+        Create account
       </Button>
       </div>
-      <div className='sign-btn'>
-        <Link to={"/SignUp"}>sign up as patient </Link>
-    
-
-      </div>
+     
    
     </Form>
     </div>
