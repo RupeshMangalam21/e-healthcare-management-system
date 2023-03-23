@@ -7,6 +7,7 @@
 }
 
 .card {
+ 
   margin: 10px;
   width: calc(33.33% - 20px);
 }

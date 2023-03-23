@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../style/LogIn.css';
 import{auth} from '../../lib/init-firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {Link} from 'react-router-dom';
+import {Link,Navigate} from 'react-router-dom';
+import {AuthContext} from './AuthProvider';
 
 
 export default function LogIn() {
@@ -18,7 +19,11 @@ export default function LogIn() {
         }).catch((error) =>{
             console.log(error);
         })
-
+      
+    }
+    const {CurrentUser} = useContext(AuthContext)
+    if(CurrentUser){
+      return <Navigate to={"/DashBoard"}/>
     }
     return (
     
