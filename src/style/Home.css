@@ -76,3 +76,12 @@
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  margin-left: 10px;
+}
