@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-            <div className="card-container">
+      <div className="card-container">
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
@@ -16,10 +16,10 @@ const Home = () => {
                 Sign up today and gain access to a wealth of health resources and information.
               </Card.Text>
               <Link to={"/LogIn"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
-
             </Card.Body>
           </Card>
         </div>
+
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
@@ -32,6 +32,7 @@ const Home = () => {
             </Card.Body>
           </Card>
         </div>
+
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
@@ -44,6 +45,7 @@ const Home = () => {
             </Card.Body>
           </Card>
         </div>
+
       </div>
     </div>
   );

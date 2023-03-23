@@ -22,32 +22,31 @@ export default function LogIn() {
     }
     return (
     
-    <div>
-        <div className="form-container">
-       <Form onSubmit={handleSubmit}>
+  <div>
+    <div className="form-container">
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" onChange={(e)=> setEmail(e.target.value)} />
-       
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
+
       <div className="log-btn">
          <Button className="lg-btn"  type="submit">
-        login
-      </Button>
+          login
+         </Button>
       </div>
+
       <div className='sign-btn'>
         <Link to={"/SignUp"}>sign up as patient </Link>
-    
-
       </div>
    
     </Form>
     </div>
-    </div>
+  </div>
   )
 }
