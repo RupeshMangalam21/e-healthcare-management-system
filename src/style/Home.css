@@ -1,14 +1,89 @@
 .card-container {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .card {
- 
-  margin: 10px;
+ margin: 10px;
   width: calc(33.33% - 20px);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  text-align:left;
+  padding: 2rem;
 }
-  
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 1rem 0;
+  color: #666;
+}
+
+.login-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #54cdd8;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration-color: aliceblue;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #dce4e7;
+  transform: translateY(-2px);
+}
+
+.navbar {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #99e5de;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10 20px;
+}
+
+.nav-title {
+  padding-left: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e1c1c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-title {
+  margin-left: 10px;
+}
