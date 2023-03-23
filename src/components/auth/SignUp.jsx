@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import '../../style/SignUp.css';
 import{auth} from '../../lib/init-firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Navigate } from 'react-router-dom';
 
 
 export default function SignUp() {
@@ -14,9 +15,12 @@ export default function SignUp() {
         e.preventDefault();
         createUserWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
             console.log(useCredentials);
+            
         }).catch((error) =>{
             console.log(error);
         })
+
+        return <Navigate to={"/LogIn"}/>
 
     }
     return (
