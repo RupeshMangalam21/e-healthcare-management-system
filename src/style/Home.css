@@ -1,10 +1,11 @@
 .hero-section {
-  background-image: url('https://github.com/RupeshMangalam21/emergency-healthcare-managment-system/blob/UI-improvements/src/assets/hero-bg.jpg');
+  background-image: url('/workspaces/emergency-healthcare-managment-system/src/assets/hero-bg.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .card-container {
+  margin-top: 5rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -71,9 +72,9 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: #99e5de;
+  background: linear-gradient(to right, #99dbe5, #9254d8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10 20px;
+  padding: 10px 20px;
 }
 
 .nav-title {
