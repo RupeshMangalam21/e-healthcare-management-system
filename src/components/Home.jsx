@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/Home.css';
+import '../style/main.scss'
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
@@ -28,7 +29,7 @@ const Home = () => {
                 Access your secure account to view patient information and update records.
                 Join a supportive community of patients and healthcare providers.
               </Card.Text>
-              <Link to={"/LogIn"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
+              <Link to={"/LogIn"} className="login-btn" style={{ color: 'white', textDecoration: 'none' }}> <Card.Link>Login</Card.Link></Link>
             </Card.Body>
           </Card>
         </div>

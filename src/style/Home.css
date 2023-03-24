@@ -1,5 +1,5 @@
 .hero-section {
-  background-image: url('/workspaces/emergency-healthcare-managment-system/src/assets/hero-bg.jpg');
+  background-image: url('../assets/hero-bg.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -89,8 +89,26 @@
 .nav-logo {
   display: flex;
   align-items: center;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 
 .nav-title {
   margin-left: 10px;
+}
+.logo-avah{
+  background-image: url('../assets/logo_avah.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 50px;
+  width: 50px;
+}
+*, ::after, ::before {
+  box-sizing: content-box !important;
+}
+.card-container{
+  flex-wrap: nowrap;
+  gap: 0rem;
 }
