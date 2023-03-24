@@ -48,7 +48,6 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  color: #fff;
   background-color: #54cdd8;
   border: none;
   border-radius: 5px;
@@ -62,8 +61,8 @@
   cursor: pointer;
 }
 .card-body .login-btn a{
-    text-decoration: none !important;
-    color: white;
+  text-decoration: none !important;
+  color: white;
 }
 .login-btn:hover {
   background-color: #dce4e7;
