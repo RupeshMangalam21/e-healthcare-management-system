@@ -1,3 +1,9 @@
+.hero-section {
+  background-image: url('https://github.com/RupeshMangalam21/emergency-healthcare-managment-system/blob/UI-improvements/src/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .card-container {
   display: flex;
   justify-content: space-between;
