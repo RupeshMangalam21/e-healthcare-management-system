@@ -5,7 +5,7 @@ function Header() {
         <div>
             <nav className="navbar">
                 <div className="nav-logo">
-                    <img src= "../assets/logo_avah.png" alt="AVA-H Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                    <img src= "src/components/logo_avah.png" alt="AVA-H Logo"/>
                     <div className="nav-title">AVA-H</div>
                 </div>
             </nav>

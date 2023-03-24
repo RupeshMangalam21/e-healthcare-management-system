@@ -10,9 +10,9 @@ const Home = () => {
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
-              <Card.Title>Patient</Card.Title>
+              <Card.Title>User</Card.Title>
               <Card.Text>
-                Join a supportive community of patients and healthcare providers.
+                Join as a user and Organise your medical data easily.
                 Sign up today and gain access to a wealth of health resources and information.
               </Card.Text>
               <Link to={"/LogIn"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
@@ -23,7 +23,7 @@ const Home = () => {
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
-              <Card.Title>Doctor</Card.Title>
+              <Card.Title>Healthcare Professional</Card.Title>
               <Card.Text>
                 Access your secure account to view patient information and update records.
                 Join a supportive community of patients and healthcare providers.
@@ -35,7 +35,7 @@ const Home = () => {
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
-              <Card.Title>DBA</Card.Title>
+              <Card.Title>Admin</Card.Title>
               <Card.Text>
                 Manage your databases with ease and efficiency.
                 Join a supportive community of patients and healthcare providers.
