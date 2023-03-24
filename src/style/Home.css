@@ -105,9 +105,6 @@
   height: 50px;
   width: 50px;
 }
-*, ::after, ::before {
-  box-sizing: content-box !important;
-}
 .card-container{
   flex-wrap: nowrap;
   gap: 0rem;
