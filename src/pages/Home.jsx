@@ -15,7 +15,7 @@ const Home = () => {
                 Join as a user and Organise your medical data easily.
                 Sign up today and gain access to a wealth of health resources and information.
               </Card.Text>
-              <Link to={"/LogIn"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
+              <Link to="/LogIn" state={"Patient"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
 
             </Card.Body>
           </Card>
@@ -28,7 +28,7 @@ const Home = () => {
                 Access your secure account to view patient information and update records.
                 Join a supportive community of patients and healthcare providers.
               </Card.Text>
-              <Link to={"/LogIn"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
+              <Link to={{pathname: "/login", state: { userType: "Doc" }}} className="login-btn"> <Card.Link>Login</Card.Link></Link>
             </Card.Body>
           </Card>
         </div>
@@ -40,7 +40,7 @@ const Home = () => {
                 Manage your databases with ease and efficiency.
                 Join a supportive community of patients and healthcare providers.
               </Card.Text>
-              <Link to={"/LogIn"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
+              <Link to={{pathname: "/login", state: { userType: "DBA" }}} className="login-btn"> <Card.Link>Login</Card.Link></Link>
             </Card.Body>
           </Card>
         </div>

@@ -1,15 +1,15 @@
-.form-container {
+.sign-form-container {
     
     display: flex;
     justify-content: center;
-    height: 100vh;
+ 
     
     }
   
-  .form-container form {
+  .sign-form-container form {
 
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     margin:auto;
     padding: 50px;
     background-color: rgba(93, 221, 225, 0.473);
@@ -17,21 +17,16 @@
     justify-content:center;
   }
   
-  .log-btn{
+  .sign-log-btn{
 
     display: flex;
     justify-content: center;
     padding-top: 30px;
     }
 
-  .sign-btn{
+  
 
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-  }
-
-  .lg-btn{
+  .sign-lg-btn{
 
     width: 200px;
     border-radius: 50px;
