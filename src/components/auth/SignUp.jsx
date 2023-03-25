@@ -4,18 +4,18 @@ import Form from 'react-bootstrap/Form';
 import '../../style/SignUp.css';
 import{auth} from '../../lib/init-firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SignUp() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-
+    const navigate = useNavigate();
     function handleSubmit(e){
         e.preventDefault();
         createUserWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
             console.log(useCredentials);
-            return <Navigate to={"/LogIn"}/>
+          navigate("/LogIn")
             
         }).catch((error) =>{
             console.log(error);

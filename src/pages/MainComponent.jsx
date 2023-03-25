@@ -7,6 +7,7 @@ import DashBoard from './DashBoard'
 import Header from '../components/headerfooter/Header'
 import Home from './Home'
 import Footer from '../components/headerfooter/Footer'
+import PrivateRoute from "../components/PrivateRoute"
 export default function MainComponent() {
   return (
     <div>
@@ -14,8 +15,12 @@ export default function MainComponent() {
 <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/DashBoard' element={<DashBoard/>}/>
-        <Route path='/LogIn' element={<LogIn/>}/>
+      
+        <Route element={<PrivateRoute/>}>
+          <Route path='/DashBoard' element={<DashBoard/>}/>
+          </Route>   
+       
+         <Route path='/LogIn' element={<LogIn/>}/>
         <Route path='/SignUp' element={<SignUp/>}/>
       </Routes>
 </AuthProvider>
