@@ -1,21 +1,14 @@
 import React from 'react';
+import "../../style/Headerfooter.css"
 
-const Footer = () => {
+function Footer() {
     return (
         <div>
-            <div style={{ minHeight: '27vh', position: 'relative' }}>
-            <footer style={{ 
-  background: 'linear-gradient(to right, #9254d8, #99dbe5)',
-  padding: '10px',
-  textAlign: 'center',
-  position: 'fixed',
-  bottom: '0',
-  width: '100%'
-}}>
-        <p style={{ fontSize: '14px', color: 'white' }}>Copyright © 2023 AVA-H.
-          All rights reserved.</p>
-      </footer>
-    </div>
+            <div style={{position: 'relative' }}>
+            <footer className='footer'>
+            <p style={{ fontSize: '14px', color: 'white' }}>Copyright © 2023 AVA-H. All rights reserved.</p>
+            </footer>
+            </div>
         </div>
     );
 }
