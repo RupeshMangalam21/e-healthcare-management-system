@@ -111,3 +111,6 @@
   flex-wrap: nowrap;
   gap: 0rem;
 }
+*, ::after, ::before {
+  box-sizing: content-box !important;
+}

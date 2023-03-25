@@ -4,7 +4,7 @@ import '../style/main.scss'
 const Footer = () => {
     return (
         <div>
-            <div style={{ minHeight: '27vh', position: 'relative' }}>
+            <div style={{position: 'relative' }}>
             <footer className='footer'>
         <p style={{ fontSize: '14px', color: 'white' }}>Copyright © 2023 AVA-H.
           All rights reserved.</p>
