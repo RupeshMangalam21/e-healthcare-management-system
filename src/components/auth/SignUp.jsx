@@ -39,7 +39,7 @@ export default function SignUp() {
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
       <div className="log-btn">
-         <Button className="lg-btn"  type="submit">
+         <Button className="login-btn"  type="submit">
         Create account
       </Button>
       </div>

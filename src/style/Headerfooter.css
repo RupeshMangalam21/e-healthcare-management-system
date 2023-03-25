@@ -3,10 +3,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    height: 90px;
+    height: 80px;
     background: linear-gradient(to right, #99dbe5, #9254d8);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    padding: 10px;
+    width:100%;
   }
   
   .nav-title {
@@ -24,6 +25,7 @@
     margin-right: auto;
     margin-left: auto;
     box-sizing: content-box;
+    border:4px;
   }
   
   .nav-title {

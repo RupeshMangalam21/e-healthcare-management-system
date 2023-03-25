@@ -41,15 +41,15 @@ export default function LogIn() {
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
       <div className="log-btn">
-         <Button className="lg-btn"  type="submit">
+         <Button className="login-btn"  type="submit">
         login
       </Button>
       </div>
-      <div className='sign-btn'>
-        <Link to={"/SignUp"}>sign up as patient </Link>
-    
-
-      </div>
+      <div className="sign-btn">
+  <Link to={"/SignUp"} className="signup-btn">
+    Sign Up
+  </Link>
+</div>
    
     </Form>
     </div>
