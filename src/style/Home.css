@@ -91,6 +91,7 @@
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+  box-sizing: content-box;
 }
 
 
@@ -105,6 +106,7 @@
   height: 50px;
   width: 50px;
 }
+
 .card-container{
   flex-wrap: nowrap;
   gap: 0rem;
