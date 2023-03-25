@@ -8,7 +8,7 @@ const Footer = () => {
   background: 'linear-gradient(to right, #9254d8, #99dbe5)',
   padding: '10px',
   textAlign: 'center',
-  position: 'absolute',
+  position: 'fixed',
   bottom: '0',
   width: '100%'
 }}>
