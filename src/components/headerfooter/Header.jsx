@@ -1,6 +1,5 @@
 import React from 'react';
 import '/workspaces/e-healthcare-management-system/src/style/Home.css';
-import logo from "../../assets/logo_avah.png"
 function Header() {
     return (
         <div>
