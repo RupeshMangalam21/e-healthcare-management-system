@@ -1,4 +1,11 @@
+.hero-section {
+  background-image: url('/workspaces/emergency-healthcare-managment-system/src/assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .card-container {
+  margin-top: 5rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -41,7 +48,6 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  color: #fff;
   background-color: #54cdd8;
   border: none;
   border-radius: 5px;
@@ -50,10 +56,14 @@
   text-decoration-color: aliceblue;
   font-size: 14px;
   font-weight: bold;
+  text-decoration: none !important;
   letter-spacing: 1px;
   cursor: pointer;
 }
-
+.card-body .login-btn a{
+  text-decoration: none !important;
+  color: white;
+}
 .login-btn:hover {
   background-color: #dce4e7;
   transform: translateY(-2px);
@@ -65,9 +75,9 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: #99e5de;
+  background: linear-gradient(to right, #99dbe5, #9254d8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10 20px;
+  padding: 10px 20px;
 }
 
 .nav-title {
