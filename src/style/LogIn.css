@@ -1,15 +1,16 @@
-.form-container {
+.log-form-container {
     
     display: flex;
     justify-content: center;
-    height: 100vh;
+  
+    
     
     }
   
-  .form-container form {
+  .log-form-container form {
 
-    height: 600px;
-    width: 600px;
+    height: 400px ;
+    width: 400px;
     margin:auto;
     padding: 50px;
     background-color: rgba(93, 221, 225, 0.473);

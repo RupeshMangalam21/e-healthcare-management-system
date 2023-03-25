@@ -1,21 +1,25 @@
-import React, { useState,useContext } from 'react'
+import React, { useState,useContext} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../style/LogIn.css';
 import{auth} from '../../lib/init-firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {Link,Navigate} from 'react-router-dom';
+import {Link,Navigate,useLocation} from 'react-router-dom';
 import {AuthContext} from './AuthProvider';
 
 
 export default function LogIn() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+  const location = useLocation();
+    const user=location.state;
+
 
     function handleSubmit(e){
         e.preventDefault();
         signInWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
             console.log(useCredentials);
+            
         }).catch((error) =>{
             console.log(error);
         })
@@ -28,7 +32,7 @@ export default function LogIn() {
     return (
     
     <div>
-        <div className="form-container">
+        <div className="log-form-container">
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -45,11 +49,13 @@ export default function LogIn() {
         login
       </Button>
       </div>
-      <div className='sign-btn'>
-        <Link to={"/SignUp"}>sign up as patient </Link>
-    
+      {user === 'Patient' ? (
+            <div className="sign-btn">
+              <Link to={'/SignUp'}>sign up</Link>
+            </div>
+          ) : null}
 
-      </div>
+     
    
     </Form>
     </div>

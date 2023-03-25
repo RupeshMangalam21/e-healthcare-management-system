@@ -15,18 +15,19 @@ export default function SignUp() {
         e.preventDefault();
         createUserWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
             console.log(useCredentials);
+            return <Navigate to={"/LogIn"}/>
             
         }).catch((error) =>{
             console.log(error);
         })
 
-        return <Navigate to={"/LogIn"}/>
+      
 
     }
     return (
     
     <div>
-        <div className="form-container">
+        <div className="sign-form-container">
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -38,8 +39,8 @@ export default function SignUp() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
-      <div className="log-btn">
-         <Button className="lg-btn"  type="submit">
+      <div className="sign-log-btn">
+         <Button className="sign-lg-btn"  type="submit">
         Create account
       </Button>
       </div>
