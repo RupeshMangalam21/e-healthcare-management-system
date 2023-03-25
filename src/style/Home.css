@@ -48,7 +48,6 @@
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  color: #fff;
   background-color: #54cdd8;
   border: none;
   border-radius: 5px;
@@ -57,10 +56,14 @@
   text-decoration-color: aliceblue;
   font-size: 14px;
   font-weight: bold;
+  text-decoration: none !important;
   letter-spacing: 1px;
   cursor: pointer;
 }
-
+.card-body .login-btn a{
+  text-decoration: none !important;
+  color: white;
+}
 .login-btn:hover {
   background-color: #dce4e7;
   transform: translateY(-2px);
