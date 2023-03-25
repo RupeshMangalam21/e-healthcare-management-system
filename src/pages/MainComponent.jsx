@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import {AuthProvider} from './auth/AuthProvider'
-import LogIn from './auth/LogIn'
-import SignUp from './auth/SignUp'
+import {AuthProvider} from '../components/auth/AuthProvider'
+import LogIn from '../components/auth/LogIn'
+import SignUp from '../components/auth/SignUp'
 import DashBoard from './DashBoard'
-import Header from './Header'
+import Header from '../components/headerfooter/Header'
 import Home from './Home'
-import Footer from './Footer'
+import Footer from '../components/headerfooter/Footer'
 export default function MainComponent() {
   return (
     <div>
