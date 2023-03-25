@@ -68,33 +68,3 @@
   background-color: #dce4e7;
   transform: translateY(-2px);
 }
-
-.navbar {
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  background: linear-gradient(to right, #99dbe5, #9254d8);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-}
-
-.nav-title {
-  padding-left: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #1e1c1c;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  
-}
-
-.nav-title {
-  margin-left: 10px;
-}
