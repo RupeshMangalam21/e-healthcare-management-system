@@ -1,5 +1,5 @@
 import React from 'react';
-import '/workspaces/emergency-healthcare-managment-system/src/style/Home.css';
+import '/workspaces/e-healthcare-management-system/src/style/Home.css';
 import logo from "../../assets/logo_avah.png"
 function Header() {
     return (
