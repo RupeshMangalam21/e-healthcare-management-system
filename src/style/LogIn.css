@@ -1,40 +1,37 @@
 .log-form-container {
-    
-    display: flex;
-    justify-content: center;
-  
-    
-    
-    }
-  
-  .log-form-container form {
+	display: flex;
+	justify-content: center;
+}
 
-    height: 400px ;
-    width: 400px;
-    margin:auto;
-    padding: 50px;
-    background-color: rgba(93, 221, 225, 0.473);
-    border-radius: 15px;
-    justify-content:center;
-  }
-  
-  .log-btn{
+.log-form-container form {
+	/* height: 400px ;
+    width: 400px; */
+	margin: auto;
+	padding: 50px;
+	background-color: rgba(93, 221, 225, 0.473);
+	border-radius: 15px;
+	justify-content: center;
+}
 
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    }
+.log-btn {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
 
-  .sign-btn{
+/* .login-btn:hover {
+	background-color: #dce4e7;
+	transform: translateY(-2px);
+} */
 
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-  }
+.sign-btn {
+	display: flex;
+	justify-content: center;
+	padding-top: 30px;
+}
 
-  .lg-btn{
-
-    width: 200px;
-    border-radius: 50px;
-    text-transform:capitalize;
-  }
+.lg-btn {
+	width: 200px;
+	border-radius: 50px;
+	text-transform: capitalize;
+}

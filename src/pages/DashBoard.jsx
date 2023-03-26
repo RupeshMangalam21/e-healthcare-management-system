@@ -1,26 +1,21 @@
-import { signOut } from 'firebase/auth';
-import { auth } from '../lib/init-firebase';
-
-
-
+import { signOut } from "firebase/auth"
+import React from "react"
+import { auth } from "../lib/init-firebase"
 
 const DashBoard = () => {
+	const handleSignOut = () => {
+		signOut(auth)
+			.then(() => {
+				console.log("sign out ")
+			})
+			.catch((error) => console.log(error))
+	}
 
-    const handleSignOut=()=>{
-        signOut(auth).then(()=>{
-           console.log("sign out ")
-
-        }).catch(error=>console.log(error))
-
-    }
-    
-
-   
-    return (
-        <div>
-          <button onClick={handleSignOut}>sign out</button>
-        </div>
-    );
+	return (
+		<div>
+			<button onClick={handleSignOut}>sign out</button>
+		</div>
+	)
 }
 
-export default DashBoard;
+export default DashBoard
