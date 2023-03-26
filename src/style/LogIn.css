@@ -24,8 +24,8 @@
 }
 
 .log-btn .login-btn {
-  display: inline-block;
-  margin-top: 1rem;
+  display: block;
+  margin-top: 2rem;
   padding: 0.5rem 1rem;
   background-color: #54cdd8;
   border: none;
@@ -38,6 +38,7 @@
   text-decoration: none !important;
   letter-spacing: 1px;
   cursor: pointer;
+  margin-left: 13rem;
 }
 
 .log-btn .login-btn a {
@@ -46,7 +47,7 @@
 }
 
 .log-btn .login-btn:hover {
-  background-color: #1e1f20;
+  background-color: #f3f8fd;
   transform: translateY(-2px);
   color: black !important;
 }
@@ -54,7 +55,8 @@
 .sign-btn {
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: 0px;
+  margin-top: 0%;
 }
 
 .sign-btn a {
