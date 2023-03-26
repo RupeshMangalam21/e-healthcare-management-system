@@ -1,35 +1,29 @@
-<<<<<<< HEAD
-.form-container {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    }
-  
-  .form-container form {
-    height: 600px;
-    width: 600px;
-=======
+.signup-page{
+  background-image: url('../assets/login-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
 .sign-form-container {
-    
-    display: flex;
-    justify-content: center;
- 
-    
+  display: grid;
+  place-items: center;
+  height: 88vh;
+  width: 100%;
     }
   
   .sign-form-container form {
-
-    height: 400px;
-    width: 400px;
->>>>>>> main
-    margin:auto;
+    width: 600px;
     padding: 50px;
-    background-color: rgba(93, 221, 225, 0.473);
     border-radius: 15px;
-    justify-content:center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.548);
+    opacity: 1 !important;
+    max-height: 350px;
+    background-color: rgba(0, 0, 0, 0.554);
+    color: white;
   }
   
-<<<<<<< HEAD
   .log-btn .login-btn {
     display: inline-block;
     margin-top: 1rem;
@@ -91,20 +85,3 @@
     color: black;
   }
   
-=======
-  .sign-log-btn{
-
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-    }
-
-  
-
-  .sign-lg-btn{
-
-    width: 200px;
-    border-radius: 50px;
-    text-transform:capitalize;
-  }
->>>>>>> main

@@ -26,7 +26,7 @@ export default function SignUp() {
     }
     return (
     
-    <div>
+    <div className='signup-page'>
         <div className="sign-form-container">
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -39,13 +39,8 @@ export default function SignUp() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
-<<<<<<< HEAD
       <div className="log-btn">
          <Button className="login-btn"  type="submit">
-=======
-      <div className="sign-log-btn">
-         <Button className="sign-lg-btn"  type="submit">
->>>>>>> main
         Create account
       </Button>
       </div>
