@@ -23,7 +23,6 @@
   color: white;
 }
 
-
 .log-btn .login-btn {
   display: inline-block;
   margin-top: 1rem;
@@ -47,11 +46,8 @@
 }
 
 .log-btn .login-btn:hover {
-  background-color: #dce4e7;
+  background-color: #1e1f20;
   transform: translateY(-2px);
-}
-
-.log-btn .login-btn:hover a {
   color: black !important;
 }
 

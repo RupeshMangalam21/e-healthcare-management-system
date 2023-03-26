@@ -19,7 +19,7 @@
 .card {
   margin: 10px;
   width: calc(33.33% - 20px);
-  background-color: #150e0e7a !important;
+  background-color: #150e0e97 !important;
   border-radius: 10px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -44,7 +44,7 @@
 .card:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.795);
 }
 
 .card-title {
