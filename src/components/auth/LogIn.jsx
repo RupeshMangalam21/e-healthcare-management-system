@@ -2,7 +2,7 @@ import React, { useState,useContext} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../style/LogIn.css';
-import{auth} from '../../lib/init-firebase';
+import { auth } from '../../lib/init-firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import {Link,Navigate,useLocation} from 'react-router-dom';
 import {AuthContext} from './AuthProvider';
@@ -31,13 +31,12 @@ export default function LogIn() {
     }
     return (
     
-    <div>
+    <div className='login-page'>
         <div className="log-form-container">
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label color='white' >Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" onChange={(e)=> setEmail(e.target.value)} />
-       
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -45,20 +44,17 @@ export default function LogIn() {
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
       <div className="log-btn">
-         <Button className="lg-btn"  type="submit">
+         <Button className="login-btn"  type="submit">
         login
       </Button>
-      </div>
       {user === 'Patient' ? (
             <div className="sign-btn">
               <Link to={'/SignUp'}>sign up</Link>
             </div>
           ) : null}
-
-     
-   
+      </div>
     </Form>
     </div>
     </div>
-  )
+  );
 }

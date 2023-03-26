@@ -1,37 +1,50 @@
 .hero-section {
-  background-image: url('../assets/hero-bg.jpg');
+  background-image: url('../assets/herobg-2.jpg');
   background-size: cover;
   background-position: center;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-container {
-  margin-top: 5rem;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   padding: 2rem;
   gap: 2rem;
 }
 
 .card {
- margin: 10px;
+  margin: 10px;
   width: calc(33.33% - 20px);
-  background-color: #fff;
+  background-color: #150e0e97 !important;
   border-radius: 10px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content:center;
   align-items: center;
-  text-align:left;
+  text-align: left;
   padding: 2rem;
+  margin-top: 1.5rem;
+  color: azure;
 }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 
 .card:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.795);
 }
 
 .card-title {
@@ -39,9 +52,11 @@
   font-weight: bold;
 }
 
-.card-text {
-  margin: 1rem 0;
-  color: #666;
+.card .card-text {
+  margin: 1rem;
+  color: #fffcfc;
+  text-align: left !important;
+  font-size: lar;
 }
 
 .login-btn {
@@ -64,7 +79,12 @@
   text-decoration: none !important;
   color: white;
 }
+
 .login-btn:hover {
   background-color: #dce4e7;
   transform: translateY(-2px);
+}
+
+.login-btn:hover a {
+  color: black;
 }

@@ -11,20 +11,20 @@ const Home = () => {
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
               <Card.Title>User</Card.Title>
-              <Card.Text>
+              <Card.Text className='card-text'>
                 Join as a user and Organise your medical data easily.
                 Sign up today and gain access to a wealth of health resources and information.
               </Card.Text>
               <Link to="/LogIn" state={"Patient"} className="login-btn"> <Card.Link>Login</Card.Link></Link>
-
             </Card.Body>
           </Card>
         </div>
+
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
               <Card.Title>Healthcare Professional</Card.Title>
-              <Card.Text>
+              <Card.Text className='card-text'>
                 Access your secure account to view patient information and update records.
                 Join a supportive community of patients and healthcare providers.
               </Card.Text>
@@ -32,11 +32,12 @@ const Home = () => {
             </Card.Body>
           </Card>
         </div>
+        
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
             <Card.Body>
               <Card.Title>Admin</Card.Title>
-              <Card.Text>
+              <Card.Text className='card-text'>
                 Manage your databases with ease and efficiency.
                 Join a supportive community of patients and healthcare providers.
               </Card.Text>
