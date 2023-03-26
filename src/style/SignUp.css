@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .form-container {
     display: flex;
     justify-content: center;
@@ -7,6 +8,20 @@
   .form-container form {
     height: 600px;
     width: 600px;
+=======
+.sign-form-container {
+    
+    display: flex;
+    justify-content: center;
+ 
+    
+    }
+  
+  .sign-form-container form {
+
+    height: 400px;
+    width: 400px;
+>>>>>>> main
     margin:auto;
     padding: 50px;
     background-color: rgba(93, 221, 225, 0.473);
@@ -14,6 +29,7 @@
     justify-content:center;
   }
   
+<<<<<<< HEAD
   .log-btn .login-btn {
     display: inline-block;
     margin-top: 1rem;
@@ -75,3 +91,20 @@
     color: black;
   }
   
+=======
+  .sign-log-btn{
+
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    }
+
+  
+
+  .sign-lg-btn{
+
+    width: 200px;
+    border-radius: 50px;
+    text-transform:capitalize;
+  }
+>>>>>>> main

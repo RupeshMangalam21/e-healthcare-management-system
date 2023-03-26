@@ -4,29 +4,30 @@ import Form from 'react-bootstrap/Form';
 import '../../style/SignUp.css';
 import{auth} from '../../lib/init-firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SignUp() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-
+    const navigate = useNavigate();
     function handleSubmit(e){
         e.preventDefault();
         createUserWithEmailAndPassword(auth,email,password).then((useCredentials) =>{
             console.log(useCredentials);
+          navigate("/LogIn")
             
         }).catch((error) =>{
             console.log(error);
         })
 
-        return <Navigate to={"/LogIn"}/>
+      
 
     }
     return (
     
     <div>
-        <div className="form-container">
+        <div className="sign-form-container">
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -38,8 +39,13 @@ export default function SignUp() {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
       </Form.Group>
+<<<<<<< HEAD
       <div className="log-btn">
          <Button className="login-btn"  type="submit">
+=======
+      <div className="sign-log-btn">
+         <Button className="sign-lg-btn"  type="submit">
+>>>>>>> main
         Create account
       </Button>
       </div>
