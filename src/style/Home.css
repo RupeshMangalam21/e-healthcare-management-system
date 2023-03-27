@@ -1,5 +1,5 @@
 .hero-section {
-  background-image: url('../assets/herobg-2.jpg');
+  background-image: url('../assets/background-img/bg-img4.jpg');
   background-size: cover;
   background-position: center;
   height: 88vh;
@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 1.5rem;
   color: azure;
 }
@@ -44,7 +44,7 @@
 .card:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.795);
+  box-shadow: 0px 6px 20px rgba(57, 255, 219, 0.895);
 }
 
 .card-title {
@@ -56,35 +56,39 @@
   margin: 1rem;
   color: #fffcfc;
   text-align: left !important;
-  font-size: lar;
 }
 
 .login-btn {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #54cdd8;
-  border: none;
-  border-radius: 5px;
+  background: transparent;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
-  text-decoration-color: aliceblue;
   font-size: 14px;
   font-weight: bold;
-  text-decoration: none !important;
   letter-spacing: 1px;
   cursor: pointer;
+  /* Gradient border */
+  border: 2px solid;
+  border-image: linear-gradient(to right, #54cdd8, #54d8c6);
+  border-image-slice: 1;
+  text-decoration: none;
+  border-radius: 0px;
 }
+
 .card-body .login-btn a{
-  text-decoration: none !important;
   color: white;
+  text-decoration: none;
 }
 
 .login-btn:hover {
-  background-color: #dce4e7;
+  background-image: linear-gradient(to right, #1083e1a1, #32c8d0a1, #54d894b4);
   transform: translateY(-2px);
+  border-radius: 0px;
+
 }
 
 .login-btn:hover a {
-  color: black;
+  color: white;
 }
