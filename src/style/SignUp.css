@@ -1,5 +1,5 @@
 .signup-page{
-  background-image: url('../assets/login-bg.jpg');
+  background-image: url('../assets/background-img/bg-img4.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,18 +28,21 @@
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #54cdd8;
-    border: none;
-    border-radius: 5px;
+    background: transparent;
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
     text-decoration-color: aliceblue;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none !important;
+    /* Gradient border */
+    border: 2px solid;
+    border-image: linear-gradient(to right, #54cdd8, #54d8c6);
+    border-image-slice: 1;
     letter-spacing: 1px;
     cursor: pointer;
     margin-left: 4.2rem;
+    border-radius: 0px;
   }
 
   .create-btn .create a{
@@ -48,8 +51,9 @@
   }
   
   .create-btn .create:hover {
-    background-color: #dce4e7;
+    background-image: linear-gradient(to right, #1083e1a1, #32c8d0a1, #54d894b4);
     transform: translateY(-2px);
-    color: black;
+    color: white;
+    border-radius: 0px;
   }
   
