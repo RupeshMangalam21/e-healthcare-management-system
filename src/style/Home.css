@@ -114,3 +114,6 @@
 *, ::after, ::before {
   box-sizing: content-box !important;
 }
+.slider-container {
+  display: inline-block;
+}
