@@ -3,7 +3,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  margin-top: 65px;
 }
 
 .sign-form-container {
@@ -51,7 +57,7 @@
   }
   
   .create-btn .create:hover {
-    background-image: linear-gradient(to right, #1083e1a1, #32c8d0a1, #54d894b4);
+    background-image: linear-gradient(to right, #1083e1, #32c8d0, #54d894);
     transform: translateY(-2px);
     color: white;
     border-radius: 0px;

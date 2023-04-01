@@ -2,11 +2,14 @@
   background-image: url('../assets/background-img/bg-img4.jpg');
   background-size: cover;
   background-position: center;
-  height: 88vh;
+  min-height: 100vh;
+  min-width: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-attachment: fixed;
+  margin-top: 65px;
 }
 
 .card-container {
@@ -14,6 +17,8 @@
   flex-wrap: wrap;
   padding: 2rem;
   gap: 2rem;
+  justify-content: center;
+  margin-bottom: 75px;
 }
 
 .card {
@@ -30,6 +35,19 @@
   padding: 1rem;
   margin-top: 1.5rem;
   color: azure;
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 .card-body {
@@ -83,7 +101,7 @@
 }
 
 .login-btn:hover {
-  background-image: linear-gradient(to right, #1083e1a1, #32c8d0a1, #54d894b4);
+  background-image: linear-gradient(to right, #1083e1, #32c8d0, #54d894);
   transform: translateY(-2px);
   border-radius: 0px;
 
