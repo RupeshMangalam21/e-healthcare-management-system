@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className="hero-section">
+      
       <div className="card-container">
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
@@ -45,8 +46,11 @@ const Home = () => {
             </Card.Body>
           </Card>
         </div>
+        
       </div>
+     
     </div>
+      
   );
 }
 
