@@ -1,24 +1,14 @@
-import { signOut } from 'firebase/auth';
-import { auth } from '../lib/init-firebase';
-
-
-
+import SideBar from "../components/SideBar";
 
 const DashBoard = () => {
 
-    const handleSignOut=()=>{
-        signOut(auth).then(()=>{
-           console.log("sign out ")
-
-        }).catch(error=>console.log(error))
-
-    }
+   
     
 
    
     return (
         <div>
-          <button onClick={handleSignOut}>sign out</button>
+       <SideBar/>
         </div>
     );
 }
