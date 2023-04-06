@@ -1,14 +1,12 @@
 import React from 'react';
 import '../style/Home.css';
 import Card from 'react-bootstrap/Card';
-import Header from '../components/headerfooter/Header';
-import Footer from '../components/headerfooter/Footer';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div className="hero-section">
-      <Header/>
+      
       <div className="card-container">
         <div>
           <Card className="card" style={{ width: '25rem', height: '16rem' }}>
@@ -48,8 +46,9 @@ const Home = () => {
             </Card.Body>
           </Card>
         </div>
+        
       </div>
-      <Footer/>
+     
     </div>
       
   );
