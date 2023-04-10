@@ -22,9 +22,11 @@ export default function SignUp() {
       .then((userCredentials) => {
         const{user} =userCredentials;
        const userRef = collection(firestore,'Patient')
+       const UserUid = userCredentials.user.uid;
        addDoc(userRef,{
         name: username,
         email: user.email,
+        userId: UserUid,
        }).then(()=>{
         console.log('New Patient created successfully');
         navigate('/LogIn');
