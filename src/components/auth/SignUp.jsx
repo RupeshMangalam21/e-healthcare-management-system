@@ -3,7 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../lib/init-firebase';
+import { auth, firestore} from '../../lib/init-firebase';
+import {addDoc,collection} from 'firebase/firestore';
+
 import { useNavigate } from 'react-router-dom';
 import "../../style/SignUp.css"
 
@@ -17,9 +19,19 @@ export default function SignUp() {
   function handleSubmit(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
-      .then((useCredentials) => {
-        console.log(useCredentials);
+      .then((userCredentials) => {
+        const{user} =userCredentials;
+       const userRef = collection(firestore,'Patient')
+       addDoc(userRef,{
+        name: username,
+        email: user.email,
+       }).then(()=>{
+        console.log('New Patient created successfully');
         navigate('/LogIn');
+       }).catch((error)=>{
+        setError(error.message)
+       });
+       
       })
       .catch((error) => {
         setError(error.message);
