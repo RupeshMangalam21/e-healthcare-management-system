@@ -11,7 +11,7 @@ import {AuthContext} from './AuthProvider';
 export default function LogIn() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-  const location = useLocation();
+    const location = useLocation();
     const user=location.state;
 
 
