@@ -1,0 +1,9 @@
+.profileImage {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .profileContainer{
+    text-align: center;
+  }

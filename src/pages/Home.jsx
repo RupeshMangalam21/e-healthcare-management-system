@@ -1,9 +1,18 @@
-import React from 'react';
+import {React,useContext, useEffect}from 'react';
 import '../style/Home.css';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../components/auth/AuthProvider';
+
 
 const Home = () => {
+  const { CurrentUser} = useContext(AuthContext);
+  const Navigate = useNavigate();
+  useEffect(() => {
+    if (CurrentUser) {
+      Navigate('/DashBoard');
+    }
+  }, [CurrentUser,Navigate]);
   return (
     <div className="hero-section">
       
