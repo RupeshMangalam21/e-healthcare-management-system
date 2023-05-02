@@ -44,14 +44,11 @@ function SideBar() {
               const userDoc = querySnapshot.docs[0];
               const userDocRef = doc(firestore, 'Patient', userDoc.id);
               updateDoc(userDocRef, { profileURL: url }).then(() => {
+                setImageUrl(userData.profileURL)
               }).catch((error) => {
                 console.log('Error updating photo URL in user document:', error);
               });
-            }
-            if(userData.profileURL){
-              setImageUrl(userData.profileURL)
-            }
-          });
+            }});
         });
       }).catch((error) => {
         console.log('Error uploading photo to storage:', error);
@@ -71,7 +68,7 @@ function SideBar() {
         }
       }
     });
-  }, []);
+  }, [ImageUrl]);
  
   return (
     <div className="sidebar-container">
