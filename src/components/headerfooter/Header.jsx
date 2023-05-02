@@ -9,12 +9,14 @@ import { AuthContext } from '../auth/AuthProvider';
 import { signOut } from 'firebase/auth';
 
 import SideBar from '../SideBar';
+import { useNavigate } from 'react-router-dom';
 function Header() {
   const { CurrentUser} = useContext(AuthContext);
-
+ const Navigate =useNavigate();
   const handleSignOut = () => {
     signOut(auth).then(()=>{
-        console.log("sign out ")
+        console.log("sign out ");
+        Navigate('/');
 
      }).catch(error=>console.log(error))
   };
