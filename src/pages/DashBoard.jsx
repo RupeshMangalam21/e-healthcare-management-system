@@ -1,4 +1,4 @@
-
+import UserDashboard from "../components/dashboard/UserDashboard";
 
 
 function Dashboard() {
@@ -6,7 +6,7 @@ function Dashboard() {
 
   return (
     <div>
-   
+   <UserDashboard/>
     </div>
   );
 }
