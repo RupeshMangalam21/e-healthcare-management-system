@@ -20,7 +20,7 @@ function SideBar() {
     const file = event.target.files[0];
     const userId = auth.currentUser.uid;
     const storageRef = ref(storage, `Profile/${userId}/${file.name}`);
-  
+          
     uploadBytes(storageRef, file)
       .then(() => {
         getDownloadURL(storageRef).then((url) => {
@@ -52,12 +52,15 @@ function SideBar() {
     const userId = auth.currentUser.uid;
     const userRef = collection(firestore, 'Patient');
     const q = query(userRef, where('userId', '==', userId));
-
+  
     getDocs(q).then((querySnapshot) => {
       if (!querySnapshot.empty) {
         const userDoc = querySnapshot.docs[0];
         setUserData(userDoc.data());
-       }
+        if (userDoc.data().profileURL) {
+          setImageUrl(userDoc.data().profileURL);
+        }
+      }
     });
   }, []);
  
