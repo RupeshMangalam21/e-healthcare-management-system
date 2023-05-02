@@ -1,6 +1,7 @@
 import React, { useState,useContext} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 import '../../style/LogIn.css';
 import { auth } from '../../lib/init-firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -12,8 +13,12 @@ export default function LogIn() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const location = useLocation();
+    const [error, setError] = useState(null);
     const user=location.state;
-
+    
+    function handleClose() {
+      setError(null);
+    }
 
     function handleSubmit(e){
         e.preventDefault();
@@ -21,7 +26,7 @@ export default function LogIn() {
             console.log(useCredentials);
             
         }).catch((error) =>{
-            console.log(error);
+         setError(error.message);
         })
       
     }
@@ -55,6 +60,17 @@ export default function LogIn() {
       </div>
     </Form>
     </div>
+    <Modal show={error !== null} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Error</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{error}</Modal.Body>
+        <Modal.Footer>
+          <Button variant='secondary' onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
