@@ -1,0 +1,14 @@
+.body{
+    margin: 0;
+    }
+.medical-history-container{
+        margin-top: 4rem;
+        background-color: antiquewhite;
+ }
+.history-item{
+       
+    }
+.history-item-info{
+      text-align: left;
+        width: 800px;
+    }
