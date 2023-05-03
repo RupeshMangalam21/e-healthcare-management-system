@@ -33,7 +33,7 @@ function MedicalHistory() {
   <ul>
     {medicalHistory.map((item) => (
       <li key={item.medicalHistoryId}>
-        <button onClick={() => handleClick(item)}>
+        <button onClick={() => handleClick(item.doctorName, item.date)} style={{width:"695px"}}>
           <div className="history-item">
             <div className="history-item-info">
               <p>Doctor: {item.doctorName}  Date: {new Date(item.Date).toLocaleDateString()}</p>
