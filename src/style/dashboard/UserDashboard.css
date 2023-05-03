@@ -7,7 +7,48 @@
   background: #d4cdfd;
   padding: 15px;
   width: 585px;
+  height: 480px;
+  overflow-y: scroll;
 }
+
+.Article-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.Article-item:hover {
+  background-color: #f7f7f7;
+}
+
+.Article-item-info {
+  flex: 1;
+}
+
+.Article-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.Article-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.Health-Article-list a {
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Health-Article-list a:hover {
+  color: #565656;
+}
+
 .body {
   padding: 0;
 }
