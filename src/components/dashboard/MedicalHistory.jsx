@@ -3,7 +3,7 @@ import { firestore,auth } from '../../lib/init-firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import HistoryCard from './HistoryCard';
 import "../../style/dashboard/MedicalHistory.css"
-import { Button } from 'bootstrap';
+
 
 
 function MedicalHistory() {
@@ -48,7 +48,7 @@ function MedicalHistory() {
                   <button onClick={() => handleClick(item)} style={{width:"695px"}}>
                     <div className="history-item">
                       <div className="history-item-info">
-                        <p>Doctor: {item.doctorName}  Date: {new Date(item.Date).toLocaleDateString()}</p>
+                      <p>Doctor: {item.doctorName}  Date: {new Date(item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
                       </div>
                     </div>
                   </button>

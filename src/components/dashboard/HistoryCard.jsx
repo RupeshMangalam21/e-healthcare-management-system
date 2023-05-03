@@ -1,13 +1,13 @@
 import React from 'react';
 
 function HistoryCard(props) {
-  const { date, patientName, diagnosis, doctorName, prescription, remark } = props.item;
+  const { patientName, diagnosis, doctorName, prescription, remark } = props.item;
 
-  const formattedDate = new Date(date).toLocaleString();
+  const HistoryDate =new Date(props.item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
   return (
     <div className="history-card">
-      <h3>{formattedDate}</h3>
+      <h3>{HistoryDate}</h3>
       <p>Patient Name: {patientName}</p>
       <p>Diagnosis: {diagnosis}</p>
       <p>Doctor Name: {doctorName}</p>
