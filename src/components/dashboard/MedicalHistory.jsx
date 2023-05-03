@@ -16,13 +16,13 @@ function MedicalHistory() {
       const history = [];
       querySnapshot.forEach((doc) => {
         const data = doc.data();
-        history.push(data);
+        history.push(data);   
       });
       setMedicalHistory(history);
     });
   }, []);
-  const handleClick =()=>{
-    console.log(`Clicked`);
+  const handleClick =(item)=>{
+    console.log(item);
   }
 
   return (
@@ -33,7 +33,7 @@ function MedicalHistory() {
   <ul>
     {medicalHistory.map((item) => (
       <li key={item.medicalHistoryId}>
-        <button onClick={() => handleClick(item.doctorName, item.date)}>
+        <button onClick={() => handleClick(item)}>
           <div className="history-item">
             <div className="history-item-info">
               <p>Doctor: {item.doctorName}  Date: {new Date(item.Date).toLocaleDateString()}</p>
