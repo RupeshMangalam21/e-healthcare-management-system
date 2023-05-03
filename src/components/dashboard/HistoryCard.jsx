@@ -1,18 +1,14 @@
 import React from 'react';
-
 function HistoryCard(props) {
-  const { date, patientName, diagnosis, doctorName, prescription, remark } = props.item;
-
-  const formattedDate = new Date(date).toLocaleString();
-
+  const { Date, PatientName, diagnosis, doctorName, prescription, remark } = props.item;
   return (
     <div className="history-card">
-      <h3>{formattedDate}</h3>
-      <p>Patient Name: {patientName}</p>
+      <h3>{Date}</h3>
+      <p>Patient Name: {PatientName}</p>
       <p>Diagnosis: {diagnosis}</p>
-      <p>Doctor Name: {doctorName}</p>
+      <p>Physician: {doctorName}</p>
       <p>Prescription: {prescription}</p>
-      <p>Remark: {remark}</p>
+      <p>Remarks: {remark}</p>
       </div>
   );
 }
