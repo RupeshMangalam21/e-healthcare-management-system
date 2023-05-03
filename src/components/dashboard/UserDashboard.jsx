@@ -6,7 +6,7 @@ import HealthArticle from './HealthArticle';
 const UserDashboard = () => {
   return (
     <div>
-      <div className='card-container'>  
+      <div className='History-card-container'>  
       <MedicalHistory/>
       <HealthArticle/>
       </div>
