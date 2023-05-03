@@ -4,30 +4,30 @@ import { useState,useEffect } from 'react';
 const HealthArticle = () => {
     const [data,setData]=useState("");
     useEffect(()=>{
-        const getArticle=()=>{
-            axios.get(" https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=cccdf2d38c91469790dc4b73f76bd7d0")
+   
+            axios.get("https://newsdata.io/api/1/news?apikey=pub_21593c82f69cf0f3a0513253c2bb8d9ddc5b9&q=health&country=in&language=en&category=health")
             .then((Response)=>{
                 console.log(Response)
-               setData(Response.data.articles);
+               setData(Response.data.results);
             })
-        }
        
-        getArticle();
+       
+      
     },[]);
    
     return (
         <div className="Health-Article-container">
         <h2>Health Articles</h2>
         <div className="Health-Article-list">
-        {data.length > 0 ? (
+        {data&&data.length > 0 ? (
     <ul>
       {data.map((item) => (
-        <li key={item.id}>
-       <a href={item.url}target="_blank" rel="noopener noreferrer">
+        <li key={item.pubDate}>
+       <a href={item.link}target="_blank" rel="noopener noreferrer">
             <div className="Article-item">
               <div className="Article-item-info">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <h3>{item.title.slice(0, 50)}</h3>
+              <p>{item.description.slice(0, 100)}</p>
             
               </div>
             </div>

@@ -1,11 +1,5 @@
-.Health-Article-container{
-    border-radius: 12px;
-    margin-top: 5rem;
-    margin-left: 11rem;
-    margin-right: 0.5rem;
-    display: grid;
-    background: #d9d3ff;
-    padding: 15px;
+.body{
+    margin: 0;
 }
 .row {
     display: flex;
