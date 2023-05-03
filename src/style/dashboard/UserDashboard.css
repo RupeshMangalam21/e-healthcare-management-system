@@ -1,8 +1,52 @@
-.body{
-    margin: 0;
+.Health-Article-container{
+    border-radius: 12px;
+    margin-top: 5rem;
+    margin-left: 11rem;
+    margin-right: 0.5rem;
+    display: grid;
+    background: #d9d3ff;
+    padding: 15px;
 }
-.History-card-container{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .col-md-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .History-card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 700px) {
+    .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    .History-card-container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .History-card-container > * {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    .HealthArticle {
+      display: none;
+    }
+  }
+  
+  
