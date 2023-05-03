@@ -1,14 +1,22 @@
-.body{
-    margin: 0;
-    }
 .medical-history-container{
-        margin-top: 4rem;
-        background-color: antiquewhite;
+    margin-top: 5rem;
+    margin-left: 0.8rem;
+    background-color: #e9f4ff;
+    display: grid;
+    width: min-content;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 15px;
  }
-.history-item{
-       
-    }
+ 
 .history-item-info{
       text-align: left;
         width: 800px;
     }
+.history-item-info p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.medical-history-list{
+    font-family: 'Times New Roman', Times, serif;
+}

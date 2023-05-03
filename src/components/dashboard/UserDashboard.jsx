@@ -5,13 +5,15 @@ import HealthArticle from './HealthArticle';
 
 const UserDashboard = () => {
   return (
-    <div>
-      <div className='card-container'>  
-      <MedicalHistory/>
-      <HealthArticle/>
+    <div className='row'>
+      <div className='col-md-6'>
+        <MedicalHistory />
       </div>
-    
+      <div className='col-md-6'>
+        <HealthArticle />
+      </div>
     </div>
   );
 };
+
 export default UserDashboard;
