@@ -11,7 +11,7 @@
  
 .history-item-info{
       text-align: left;
-        width: 800px;
+      width: 769px;
     }
 .history-item-info p{
     margin-top: 1rem;
@@ -28,16 +28,55 @@
   }
   
   .medical-history-list button {
-    background-color: transparent;
+    background-color: #ffffff;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    padding: 0;
+    font-size: 18.5px;
     text-align: left;
     width: 100%;
+    border-radius: 10px;
+    margin-top: 8px;
+    padding: 5px;
   }
   
   .medical-history-list button:hover {
-    background-color: #f0f0f0;
+    background-color: #cbe9f9a3;
   }
   
+  .history-card {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .medical-card-button{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none !important;
+    /* Gradient border */
+    border: 2px solid;
+    border-image: linear-gradient(to right, #548dd8, #5856db);
+    border-image-slice: 1;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-left: 0rem;
+    border-radius: 0px;
+  }
+
+  .medical-card-button a{
+    text-decoration: none !important;
+    color: white;
+  }
+  
+  .medical-card-button:hover {
+    background-image: linear-gradient(to right, #6cb8ff, #a9dae2cb, #dccdff);
+    transform: translateY(-2px);
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+  }

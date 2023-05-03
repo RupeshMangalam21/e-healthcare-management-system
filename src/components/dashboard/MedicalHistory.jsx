@@ -37,7 +37,7 @@ function MedicalHistory() {
       {selectedItem ? (
         <div>
         <HistoryCard item={selectedItem}/>
-        <button onClick={() => handleClose()}>close</button>
+        <button className='medical-card-button' onClick={() => handleClose()}>close</button>
         </div>
       ) : (
         <div className="medical-history-list">
@@ -45,10 +45,10 @@ function MedicalHistory() {
             <ul>
               {medicalHistory.map((item) => (
                 <li key={item.medicalHistoryId}>
-                  <button onClick={() => handleClick(item)} style={{width:"695px"}}>
+                  <button onClick={() => handleClick(item)} style={{width:"769px"}}>
                     <div className="history-item">
                       <div className="history-item-info">
-                      <p>Doctor: {item.doctorName}  Date: {new Date(item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                      <p> {new Date(item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} -- Physician: {item.doctorName}</p>
                       </div>
                     </div>
                   </button>

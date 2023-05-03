@@ -1,4 +1,6 @@
 import React from 'react';
+import "../../style/dashboard/MedicalHistory.css"
+
 function HistoryCard(props) {
   const { patientName, diagnosis, doctorName, prescription, remark } = props.item;
 

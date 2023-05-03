@@ -23,6 +23,7 @@
   color: #1e1c1c;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-left: 6px;
 }
 
 .navbar .nav-logo {
@@ -44,10 +45,6 @@
   display: flex;
   align-items: center;
   justify-content: center; /* Center the content vertically */
-}
-
-.nav-title {
-  margin-left: 0px;
 }
 
 .footer {
