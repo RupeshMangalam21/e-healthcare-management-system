@@ -3,8 +3,6 @@ import { firestore,auth } from '../../lib/init-firebase';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import HistoryCard from './HistoryCard';
 import "../../style/dashboard/MedicalHistory.css"
-import { Button } from 'bootstrap';
-
 
 function MedicalHistory() {
   const [medicalHistory, setMedicalHistory] = useState([]);
