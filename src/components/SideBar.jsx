@@ -53,6 +53,7 @@ function SideBar() {
       }).catch((error) => {
         console.log('Error uploading photo to storage:', error);
       });
+     
   };
   
     useEffect(() => {
