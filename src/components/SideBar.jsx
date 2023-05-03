@@ -6,21 +6,34 @@ import { auth, firestore, storage } from '../lib/init-firebase';
 import { collection, query, where, getDocs, doc, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import '../style/SideBar.css';
+import '../style/Headerfooter.css'
+import { useContext } from 'react';
+import { FaSignOutAlt } from 'react-icons/fa';
+import { AuthContext } from '../components/auth/AuthProvider';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 function SideBar() {
+  const { CurrentUser } = useContext(AuthContext);
+  const Navigate = useNavigate();
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log('sign out ');
+        Navigate('/');
+      })
+      .catch((error) => console.log(error));
+  };
   const [show, setShow] = useState(false);
   const [userData, setUserData] = useState("");
   const [ImageUrl,setImageUrl]=useState("");
-
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const addPhoto = (event) => {
-    const file = event.target.files[0];
-    const userId = auth.currentUser.uid;
-    const storageRef = ref(storage, `Profile/${userId}/${file.name}`);
-          
+  const file = event.target.files[0];
+  const userId = auth.currentUser.uid;
+  const storageRef = ref(storage, `Profile/${userId}/${file.name}`);
     uploadBytes(storageRef, file)
       .then(() => {
         getDownloadURL(storageRef).then((url) => {
@@ -40,15 +53,13 @@ function SideBar() {
       }).catch((error) => {
         console.log('Error uploading photo to storage:', error);
       });
+     
   };
   
-  
-
-  useEffect(() => {
+    useEffect(() => {
     const userId = auth.currentUser.uid;
     const userRef = collection(firestore, 'Patient');
     const q = query(userRef, where('userId', '==', userId));
-  
     getDocs(q).then((querySnapshot) => {
       if (!querySnapshot.empty) {
         const userDoc = querySnapshot.docs[0];
@@ -60,15 +71,12 @@ function SideBar() {
     });
   }, [ImageUrl]);
  
-
   return (
     <div className="sidebar-container">
-     
       <div className="nav-sign-out" onClick={handleShow}>
         <GiHamburgerMenu />
       </div>
-     
-      <Offcanvas show={show} onHide={handleClose} className="offcanvas">
+        <Offcanvas show={show} onHide={handleClose} className="offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
@@ -82,13 +90,15 @@ function SideBar() {
           <button className="add-photo-button">Add Photo</button>
         </div>
       )}
-      <div>{userData.name}</div></div>
-        
-      
+      <div>{userData.name}</div></div>        
       </Offcanvas.Body>
+      {CurrentUser && (
+        <div className="sign-out" onClick={handleSignOut}>
+          <FaSignOutAlt />
+        </div>
+      )}
       </Offcanvas>
     </div>
   );
 }
-
 export default SideBar;
