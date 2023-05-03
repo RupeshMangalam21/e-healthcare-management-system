@@ -14,11 +14,4 @@ const UserDashboard = () => {
     </div>
   );
 };
-
-
-UserDashboard.propTypes = {
-
-};
-
-
 export default UserDashboard;
