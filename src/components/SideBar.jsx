@@ -90,7 +90,9 @@ function SideBar() {
           <button className="add-photo-button">Add Photo</button>
         </div>
       )}
-      <div className='username' >{userData.name}</div></div>        
+      <div className='username' >{userData.name}</div>
+      <div className='username' >{auth.currentUser.uid}</div>
+      </div>        
       </Offcanvas.Body>
       {CurrentUser && (
         <div className="sign-out" onClick={handleSignOut}>
