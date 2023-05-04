@@ -8,6 +8,8 @@ import Header from '../components/headerfooter/Header'
 import Home from './Home'
 import Footer from '../components/headerfooter/Footer'
 import PrivateRoute from "../components/PrivateRoute"
+import Appointments from '../pages/Appointments.jsx';
+import Profile from '../pages/Profile.jsx';
 export default function MainComponent() {
   return (
     <div>
@@ -18,6 +20,8 @@ export default function MainComponent() {
       
         <Route element={<PrivateRoute/>}>
           <Route path='/DashBoard' element={<DashBoard/>}/>
+          <Route path="/profile" component={Profile}/>
+          <Route path="/appointments" component={Appointments}/>
           </Route>   
        
          <Route path='/LogIn' element={<LogIn/>}/>
