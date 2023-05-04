@@ -1,19 +1,26 @@
 import React from 'react';
 import MedicalHistory from './MedicalHistory';
-import "../../style/dashboard/UserDashboard.css"
+import NearbyHospitals from './NearbyHospitals';
 import HealthArticle from './HealthArticle';
+import Appointments from './Appointments';
+import "../../style/dashboard/UserDashboard.css"
 
-const UserDashboard = () => {
+function UserDashboard() {
   return (
-    <div className='row'>
-      <div className='col-md-6'>
+    <div>
+    <div className="row">
+      <div className="col-md-6">
         <MedicalHistory />
+        <NearbyHospitals />
+        
       </div>
-      <div className='col-md-6'>
+      <div className="col-md-7">
+      <Appointments />
         <HealthArticle />
       </div>
     </div>
+    </div>
   );
-};
+}
 
 export default UserDashboard;
