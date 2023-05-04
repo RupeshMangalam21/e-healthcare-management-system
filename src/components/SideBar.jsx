@@ -12,6 +12,8 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import { AuthContext } from '../components/auth/AuthProvider';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 function SideBar() {
   const { CurrentUser } = useContext(AuthContext);
@@ -90,7 +92,15 @@ function SideBar() {
           <button className="add-photo-button">Add Photo</button>
         </div>
       )}
-      <div className='username' >{userData.name}</div></div>        
+      <div className='username' >{userData.name}</div></div>  
+      <div className="menu-options">
+    <Link to="../Pages/Profile.jsx" className="menu-option">
+      Profile
+    </Link>
+    <Link to="../pages/Appointments.jsx" className="menu-option">
+      Appointments
+    </Link>
+  </div>      
       </Offcanvas.Body>
       {CurrentUser && (
         <div className="sign-out" onClick={handleSignOut}>
