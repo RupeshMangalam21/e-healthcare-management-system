@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../style/dashboard/MedicalHistory.css"
 
 function HistoryCard(props) {
   const { patientName, diagnosis, doctorName, prescription, remark } = props.item;
@@ -10,9 +11,9 @@ function HistoryCard(props) {
       <h3>{HistoryDate}</h3>
       <p>Patient Name: {patientName}</p>
       <p>Diagnosis: {diagnosis}</p>
-      <p>Doctor Name: {doctorName}</p>
+      <p>Physician: {doctorName}</p>
       <p>Prescription: {prescription}</p>
-      <p>Remark: {remark}</p>
+      <p>Remarks: {remark}</p>
       </div>
   );
 }
