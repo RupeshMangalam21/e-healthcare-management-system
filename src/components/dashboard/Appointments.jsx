@@ -10,7 +10,7 @@ function Appointments() {
 
   useEffect(() => {
     const userId = auth.currentUser.uid;
-    const appointmentsRef = collection(firestore, 'Appointments');
+    const appointmentsRef = collection(firestore, 'appointment');
     const q = query(appointmentsRef, where('patientId', '==', userId));
 
     getDocs(q).then((querySnapshot) => {
@@ -19,6 +19,7 @@ function Appointments() {
         const data = doc.data();
         appts.push(data);
       });
+      console.log(appts);
       setAppointments(appts);
     });
   }, []);

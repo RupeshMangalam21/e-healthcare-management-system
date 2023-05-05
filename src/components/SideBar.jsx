@@ -90,7 +90,7 @@ function SideBar() {
         <div className="add-photo-container">
           <input type="file" accept="image/*" onChange={addPhoto} />
           <button className="add-photo-button">Add Photo</button>
-        </div>
+       </div> )}
       
      <div className='username' >{userData.name}</div>
       <div className='username' >{auth.currentUser.uid}</div>
