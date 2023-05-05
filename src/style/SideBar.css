@@ -28,7 +28,16 @@
   }
 
   .username{
-    font-size: 23px;
+    font-size: 20px;
+    font-family: inherit;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .username-id{
+    background: beige;
+    border-radius: 10px;
+    margin-bottom: 50px;
   }
 
   .menu-option {

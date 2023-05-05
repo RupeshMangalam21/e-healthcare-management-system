@@ -1,9 +1,32 @@
 .appointments-container{
     margin-top: 5rem;
     margin-left: 125px;
-    height: 234px;
+    height: fit-content;
     background: darkgray;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+}
+
+.appointment-card-button{
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 18.5px;
+    text-align: left;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 8px;
+    padding: 5px;
+}
+
+.appointment-card{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.appointment-list ul{
+    list-style: none;
+    margin-left: -30px;
 }
