@@ -91,8 +91,10 @@ function SideBar() {
           <input type="file" accept="image/*" onChange={addPhoto} />
           <button className="add-photo-button">Add Photo</button>
         </div>
-      )}
-      <div className='username' >{userData.name}</div></div>  
+      
+     <div className='username' >{userData.name}</div>
+      <div className='username' >{auth.currentUser.uid}</div>
+      </div> 
       <div className="menu-options">
     <Link to="../Pages/Profile.jsx" className="menu-option">
       Profile
