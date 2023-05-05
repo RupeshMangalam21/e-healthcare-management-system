@@ -93,7 +93,7 @@ function SideBar() {
        </div> )}
       
      <div className='username' >{userData.name}</div>
-      <div className='username' >{auth.currentUser.uid}</div>
+      <div className='username-id' >{auth.currentUser.uid}</div>
       </div> 
       <div className="menu-options">
     <Link to="../Pages/Profile.jsx" className="menu-option">
