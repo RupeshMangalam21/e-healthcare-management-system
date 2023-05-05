@@ -20,8 +20,8 @@ export default function MainComponent() {
       
         <Route element={<PrivateRoute/>}>
           <Route path='/DashBoard' element={<DashBoard/>}/>
-          <Route path="/profile" component={Profile}/>
-          <Route path="/appointments" component={Appointments}/>
+          <Route path="/profile" component={<Profile/>}/>
+          <Route path="/appointments" component={<Appointments/>}/>
           </Route>   
        
          <Route path='/LogIn' element={<LogIn/>}/>
