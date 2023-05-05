@@ -4,10 +4,12 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import "../style/dashboard/Profile.css";
 
 
 function Profile() {
   const [userData, setUserData] = useState(null);
+  const[isEditing,setIsEditing]=useState(false);
 
   useEffect(() => {
     const userId = auth.currentUser.uid;
@@ -22,8 +24,11 @@ function Profile() {
   }, []);
 
   const handleEdit = () => {
-    ;
+    setIsEditing(true);
   };
+  const handleSave=()=>{
+    setIsEditing(false);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,20 +46,20 @@ function Profile() {
     <div className="profile-container">
       {userData && (
         <div className="profile">
-          <Image src={userData.profileURL} roundedCircle className="profile-image" />
+          <Image src={userData.profileURL} roundedCircle className="profileimage" />
           <h2>{userData.name}</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" defaultValue={userData.name} />
+              <Form.Control type="text" defaultValue={userData.name}  disabled={!isEditing}/>
             </Form.Group>
             <Form.Group controlId="age">
               <Form.Label>Age</Form.Label>
-              <Form.Control type="number" defaultValue={userData.age} />
+              <Form.Control type="number" defaultValue={userData.age}  disabled={!isEditing} />
             </Form.Group>
             <Form.Group controlId="gender">
               <Form.Label>Gender</Form.Label>
-              <Form.Control as="select" defaultValue={userData.gender}>
+              <Form.Control as="select" defaultValue={userData.gender}  disabled={!isEditing}>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Other</option>
@@ -62,21 +67,22 @@ function Profile() {
             </Form.Group>
             <Form.Group controlId="bloodGroup">
               <Form.Label>Blood Group</Form.Label>
-              <Form.Control type="text" defaultValue={userData.bloodGroup} />
+              <Form.Control type="text" defaultValue={userData.bloodGroup}  disabled={!isEditing}/>
             </Form.Group>
             <Form.Group controlId="phoneNumber">
               <Form.Label>Phone Number</Form.Label>
-              <Form.Control type="text" defaultValue={userData.phoneNumber} />
+              <Form.Control type="text" defaultValue={userData.phoneNumber} disabled={!isEditing} />
             </Form.Group>
             <Form.Group controlId="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" defaultValue={userData.email} />
+              <Form.Control type="email" defaultValue={userData.email} disabled={!isEditing} />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              Save Changes
-            </Button>
+           
           </Form>
-          <Button onClick={handleEdit}>Edit</Button>
+          {isEditing?(  <button onClick={handleSave}>Save</button>):(   
+              
+            <Button onClick={handleEdit}>Edit</Button>)}
+     
         </div>
       )}
     </div>

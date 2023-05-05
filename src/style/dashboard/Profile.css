@@ -1,6 +1,7 @@
-.profile-Image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+.rounded-circle {
+ width: 200px;
+}
+.profile-container{
+  padding: 50px;
+  margin-top: 5rem;
+}
