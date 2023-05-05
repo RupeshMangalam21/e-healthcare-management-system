@@ -1,0 +1,9 @@
+.appointments-container{
+    margin-top: 5rem;
+    margin-left: 125px;
+    height: 234px;
+    background: darkgray;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+}

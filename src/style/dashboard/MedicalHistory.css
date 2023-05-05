@@ -1,12 +1,12 @@
 .medical-history-container{
     margin-top: 5rem;
-    margin-left: 0.8rem;
-    background-color: #b2d8fe;
-    display: grid;
+    margin-left: 23px;
+    background-color:#acdde5;
     width: 800px;
     height: fit-content;
     border-radius: 10px;
     padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
  }
  
 .history-item-info{
@@ -16,9 +16,6 @@
 .history-item-info p{
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-.medical-history-list{
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .medical-history-list ul {
@@ -40,9 +37,10 @@
   }
   
   .medical-history-list button:hover {
-    background-color: #cbe9f9a3;
+    background-color: #fafeffd2;
+    transform: translateY(-2px);
   }
-  
+
   .history-card {
     background-color: #ffffff;
     border-radius: 5px;

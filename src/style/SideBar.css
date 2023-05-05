@@ -4,6 +4,11 @@
     object-fit: cover;
     border-radius: 50%;
   }
+
+  .offcanvas.show:not(.hiding), .offcanvas.showing {
+    transform: none;
+    background: linear-gradient(to right, #99dbe5, #9254d8);
+}
   .profileContainer{
     text-align: center;
   }
@@ -19,8 +24,26 @@
     align-items: center;
     justify-content: right;
     margin-bottom: 15px;
+    margin-top: 12px;
   }
 
   .username{
     font-size: 23px;
   }
+
+  .menu-option {
+    background: #fcfcfc;
+    padding: 12px;
+    display: flex;
+    border: black;
+    border-style: none;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: black;
+}
+
+.menu-option:hover{
+  transform: translateY(-2px);
+  color: rgb(103, 103, 103)
+}
