@@ -51,9 +51,8 @@ function Appointments() {
             <ul>
               {appointments.map((appointment) => (
                 <li key={appointment.appointmentId}>
-                  <button
+                  <button className='appointment-card-button'
                     onClick={() => handleSelectAppointment(appointment)}
-                    style={{ width: '769px' }}
                   >
                     <div className="appointment-item">
                       <div className="appointment-item-info">
