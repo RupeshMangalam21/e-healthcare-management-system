@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   background-attachment: fixed;
-  margin-top: 65px;
+  margin-top: 0px;
 }
 
 .log-form-container {
@@ -27,6 +27,7 @@
   max-height: 350px;
   background-color: rgba(0, 0, 0, 0.554);
   color: white;
+  margin-bottom: 145px;
 }
 
 .log-btn .login-btn {
