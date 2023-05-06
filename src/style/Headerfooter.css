@@ -1,20 +1,30 @@
 .header{
-  height: 4rem;
-  position: fixed;
+  height: 5.3rem;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 999;
 }
 
+body {
+  position: relative;
+  padding-top: 75px; /* height of the navbar */
+  background-color: #1400c647!important;
+}
+
 .navbar {
-  height: 65px;
+  height: 85px;
   background: linear-gradient(to right, #99dbe5, #9254d8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   display: flex;
   align-items: center; 
   justify-content: center;
+  position: absolute !important;
   z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .nav-title {
@@ -31,8 +41,8 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  margin-top: -10px;
-  margin-left: -25px;
+  margin-top: -3px;
+  margin-left: -30px;
 }
 
 .navbar .nav-sign-out {
@@ -51,11 +61,24 @@
   background: linear-gradient(to right, #9254d8, #99dbe5);
   padding: 10px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 60px;
+  height: 150px;
   bottom: 0;
   z-index: 999;
 }
 
+.footer-menu{
+  list-style: none;
+  text-align: left;
+  margin-left: -20px;
+  margin-top: 18px;
+}
+.footer-menu a{
+  color: aliceblue;
+  text-decoration-line: none;
+}
 
+.footer-menu li{
+  margin-top: 8px;
+}

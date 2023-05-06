@@ -9,7 +9,8 @@
   justify-content: center;
   align-items: center;
   background-attachment: fixed;
-  margin-top: 65px;
+  margin-top: 0px;
+  margin-bottom: 150px;
 }
 
 .card-container {
@@ -18,7 +19,7 @@
   padding: 2rem;
   gap: 2rem;
   justify-content: center;
-  margin-bottom: 75px;
+  margin-bottom: 160px;
 }
 
 .card {

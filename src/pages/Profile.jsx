@@ -47,7 +47,7 @@ function Profile() {
       {userData && (
         <div className="profile">
           <Image src={userData.profileURL} roundedCircle className="profileimage" />
-          <h2>{userData.name}</h2>
+          <h2 className='pro-name'>{userData.name}</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>
@@ -79,9 +79,9 @@ function Profile() {
             </Form.Group>
            
           </Form>
-          {isEditing?(  <button onClick={handleSave}>Save</button>):(   
+          {isEditing?(  <button className='ui-button' onClick={handleSave}>Save</button>):(   
               
-            <Button onClick={handleEdit}>Edit</Button>)}
+            <Button className='ui-button' onClick={handleEdit}>Edit</Button>)}
      
         </div>
       )}

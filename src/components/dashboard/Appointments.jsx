@@ -34,12 +34,12 @@ function Appointments() {
 
   return (
     <div className="appointments-container">
-      <h2>Appointments</h2>
+      <h2 style={{color:'aliceblue'}}>Appointments</h2>
       {selectedAppointment ? (
         <div>
           <AppointmentCard appointment={selectedAppointment} />
           <button
-            className="appointment-card-button"
+            className="appointment-card-button-close"
             onClick={() => handleCloseAppointment()}
           >
             close
