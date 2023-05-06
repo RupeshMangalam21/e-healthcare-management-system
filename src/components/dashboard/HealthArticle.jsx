@@ -9,8 +9,7 @@ const HealthArticle = () => {
     axios
       .get("https://newsdata.io/api/1/news?apikey=pub_21593c82f69cf0f3a0513253c2bb8d9ddc5b9&q=health&country=in&language=en&category=health")
       .then((response) => {
-        console.log(response);
-        setData(response.data.results);
+       setData(response.data.results);
       });
   }, []);
 
