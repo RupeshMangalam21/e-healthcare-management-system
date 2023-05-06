@@ -8,7 +8,7 @@ function HistoryCard(props) {
 
   return (
     <div className="history-card">
-      <h3>{HistoryDate}</h3>
+      <h4>{HistoryDate}</h4>
       <p>Patient Name: {patientName}</p>
       <p>Diagnosis: {diagnosis}</p>
       <p>Physician: {doctorName}</p>

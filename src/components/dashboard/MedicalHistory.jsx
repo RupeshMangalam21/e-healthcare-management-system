@@ -33,7 +33,7 @@ function MedicalHistory() {
 
   return (
     <div className="medical-history-container">
-      <h2>Medical History</h2>
+      <h2 style={{color:'aliceblue'}}>Medical History</h2>
       {selectedItem ? (
         <div>
         <HistoryCard item={selectedItem}/>
