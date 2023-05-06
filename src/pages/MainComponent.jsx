@@ -2,7 +2,6 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import {AuthProvider} from '../components/auth/AuthProvider'
 import PrivateRoute from "../components/PrivateRoute"
-
 import LogIn from '../components/auth/LogIn'
 import SignUp from '../components/auth/SignUp'
 import DashBoard from './DashBoard'
@@ -11,6 +10,7 @@ import Home from './Home'
 import Footer from '../components/headerfooter/Footer'
 import Profile from "../pages/Profile";
 import MakeAppointments from "../pages/MakeAppointments"
+import SecondaryFooter from '../components/headerfooter/SecondaryFooter'
 
 export default function MainComponent() {
   return (
@@ -31,7 +31,7 @@ export default function MainComponent() {
       </Routes>
 </AuthProvider>
     <Footer/>
-    
+    <SecondaryFooter/>
     </div>
   )
 }
