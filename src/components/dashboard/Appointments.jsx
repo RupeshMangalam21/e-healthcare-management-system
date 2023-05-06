@@ -19,7 +19,7 @@ function Appointments() {
         const data = doc.data();
         appts.push(data);
       });
-      console.log(appts);
+      
       setAppointments(appts);
     });
   }, []);

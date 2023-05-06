@@ -1,15 +1,17 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import {AuthProvider} from '../components/auth/AuthProvider'
+import PrivateRoute from "../components/PrivateRoute"
+
 import LogIn from '../components/auth/LogIn'
 import SignUp from '../components/auth/SignUp'
 import DashBoard from './DashBoard'
 import Header from '../components/headerfooter/Header'
 import Home from './Home'
 import Footer from '../components/headerfooter/Footer'
-import PrivateRoute from "../components/PrivateRoute"
-import Appointments from '../pages/Appointments.jsx';
-import Profile from '../pages/Profile.jsx';
+import Profile from "../pages/Profile";
+import MakeAppointments from "../pages/MakeAppointments"
+
 export default function MainComponent() {
   return (
     <div>
@@ -20,8 +22,8 @@ export default function MainComponent() {
       
         <Route element={<PrivateRoute/>}>
           <Route path='/DashBoard' element={<DashBoard/>}/>
-          <Route path="/profile" component={Profile}/>
-          <Route path="/appointments" component={Appointments}/>
+          <Route path="/Profile" element={<Profile/>}/>
+          <Route path="/MakeAppointments" element={<MakeAppointments/>}/>
           </Route>   
        
          <Route path='/LogIn' element={<LogIn/>}/>
