@@ -1,6 +1,5 @@
 .profileImage {
-    width: 150px;
-    height: 150px;
+    height: 175px;
     object-fit: cover;
     border-radius: 50%;
   }
@@ -17,7 +16,7 @@
     flex-shrink: 0;
     font-size: 28px;
     cursor: pointer;
-    color: #1e1c1c;
+    color: aliceblue;    
     margin-left: 15px;
     margin-right: 15px;
     display: flex;
@@ -27,6 +26,12 @@
     margin-top: 12px;
   }
 
+.sign-out-a{
+  font-size: 18px;
+  margin-left: 285px;
+  margin-bottom: -38px;
+  color: aliceblue;
+}
   .username{
     font-size: 20px;
     font-family: inherit;
