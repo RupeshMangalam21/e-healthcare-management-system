@@ -2,7 +2,7 @@
     margin-top: 5rem;
     margin-left: 23px;
     background-color:#4c0df052;
-    width: 800px;
+    width: 785px;
     height: fit-content;
     border-radius: 10px;
     padding: 15px;
@@ -17,6 +17,7 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    text-transform: capitalize;
 }
 
 .medical-history-list ul {
@@ -46,6 +47,7 @@
     background-color: #ffffffb8;
     border-radius: 5px;
     padding: 10px;
+    text-transform: capitalize;
   }
 
   .medical-card-button{
