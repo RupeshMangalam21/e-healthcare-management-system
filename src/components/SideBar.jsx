@@ -11,13 +11,14 @@ import { useContext } from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { AuthContext } from '../components/auth/AuthProvider';
 import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 function SideBar() {
   const { CurrentUser } = useContext(AuthContext);
   const Navigate = useNavigate();
+  const location = useLocation();
 
   const handleSignOut = () => {
     signOut(auth)
@@ -78,37 +79,43 @@ function SideBar() {
       <div className="nav-sign-out" onClick={handleShow}>
         <GiHamburgerMenu />
       </div>
-        <Offcanvas show={show} onHide={handleClose} className="offcanvas">
+      <Offcanvas show={show} onHide={handleClose} className="offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className="profileContainer">   
+          <div className="profileContainer">
             {ImageUrl ? (
-        <Image  src={ImageUrl} roundedCircle className='profileImage' />
-      ) : (
-        <div className="add-photo-container">
-          <input type="file" accept="image/*" onChange={addPhoto} />
-          <button className="add-photo-button">Add Photo</button>
-       </div> )}
-      
-     <div className='username' >{userData.name}</div>
-      <div className='username-id' >{auth.currentUser.uid}</div>
-      </div> 
-      <div className="menu-options">
-    <Link to="/Profile" className="menu-option">
-      Profile
-    </Link>
-    <Link to="/MakeAppointments" className="menu-option">
-      Appointments
-    </Link>
-  </div>      
-      </Offcanvas.Body>
-      {CurrentUser && (
-        <div className="sign-out" onClick={handleSignOut}>
-          <FaSignOutAlt />
-        </div>
-      )}
+              <Image src={ImageUrl} roundedCircle className="profileImage" />
+            ) : (
+              <div className="add-photo-container">
+                <input type="file" accept="image/*" onChange={addPhoto} />
+                <button className="add-photo-button">Add Photo</button>
+              </div>
+            )}
+  
+            <div className="username">{userData.name}</div>
+            <div className="username-id">ID - {auth.currentUser.uid}</div>
+          </div>
+          <div className="menu-options">
+            {!window.location.pathname.includes('DashBoard') && (
+              <Link to="/DashBoard" className="menu-option">
+                Home
+              </Link>
+            )}
+            <Link to="/Profile" className="menu-option">
+              Profile
+            </Link>
+            <Link to="/MakeAppointments" className="menu-option">
+              Appointments
+            </Link>
+          </div>
+        </Offcanvas.Body>
+        {CurrentUser && (
+          <><div className='sign-out-a'>Log Out</div><div className="sign-out" onClick={handleSignOut}>
+            <FaSignOutAlt />
+          </div></>
+        )}
       </Offcanvas>
     </div>
   );

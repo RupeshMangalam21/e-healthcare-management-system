@@ -1,8 +1,8 @@
 .medical-history-container{
     margin-top: 5rem;
     margin-left: 23px;
-    background-color:#acdde5;
-    width: 800px;
+    background-color:#4c0df052;
+    width: 785px;
     height: fit-content;
     border-radius: 10px;
     padding: 15px;
@@ -16,6 +16,8 @@
 .history-item-info p{
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
 }
 
 .medical-history-list ul {
@@ -25,7 +27,7 @@
   }
   
   .medical-history-list button {
-    background-color: #ffffff;
+    background-color: #ffffffb8!important;
     border: none;
     cursor: pointer;
     font-size: 18.5px;
@@ -37,34 +39,32 @@
   }
   
   .medical-history-list button:hover {
-    background-color: #fafeffd2;
+    background-color: #fafeffd2!important;
     transform: translateY(-2px);
   }
 
   .history-card {
-    background-color: #ffffff;
+    background-color: #ffffffb8;
     border-radius: 5px;
     padding: 10px;
+    text-transform: capitalize;
   }
 
   .medical-card-button{
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background: #ffffff;
+    background: #ffffffb8;
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
     text-decoration: none !important;
-    /* Gradient border */
-    border: 2px solid;
-    border-image: linear-gradient(to right, #548dd8, #5856db);
-    border-image-slice: 1;
+    border: none;
     letter-spacing: 1px;
     cursor: pointer;
     margin-left: 0rem;
-    border-radius: 0px;
+    border-radius: 5px;
   }
 
   .medical-card-button a{
@@ -73,7 +73,7 @@
   }
   
   .medical-card-button:hover {
-    background-image: linear-gradient(to right, #6cb8ff, #a9dae2cb, #dccdff);
+    background-color: whitesmoke;
     transform: translateY(-2px);
     color: rgb(0, 0, 0);
     border-radius: 0px;

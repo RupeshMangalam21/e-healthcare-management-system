@@ -1,7 +1,58 @@
-.rounded-circle {
- width: 200px;
+.profileimage {
+ width: 175px;
+ margin-bottom: 75px;
+ margin-left: 145px;
+}
+
+.Profile .body{
+  background-color: #1400c647!important;
 }
 .profile-container{
   padding: 50px;
-  margin-top: 5rem;
+  margin-top: 0rem;
+  margin-bottom: 500px;
+  background: #4c0df052;
+  color: white;
+}
+
+.profile{
+  margin-left: 450px;
+}
+.pro-name{
+  margin-left: 210px;
+  margin-top: -65px;
+  margin-bottom: 50px;
+}
+button.ui-button{
+  display: inline-block;
+  width: 80px;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ffffffb8;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-left: 215px;
+  border-radius: 5px;
+  color: black;
+}
+
+button.ui-button:hover{
+  background-color: whitesmoke;
+  transform: translateY(-2px);
+  color: rgb(0, 0, 0);
+  border-radius: 0px;
+}
+
+button.ui-button a{
+  text-decoration: none;
+}
+
+.profile .form-control {
+  width: 500px!important;
 }

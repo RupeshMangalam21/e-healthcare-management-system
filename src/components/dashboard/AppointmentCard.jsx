@@ -7,10 +7,10 @@ function AppointmentCard(props) {
 
   return (
     <div className="appointment-card">
-      <h3>Appointment Details</h3>
+      <h4>Details</h4>
       <p>Appointment ID: {AppointmentId}</p>
       <p>Appointment Date: {appointmentDate}</p>
-      <p>Doctor Name: {doctorName}</p>
+      <p>Physician Name: {doctorName}</p>
       <p>Patient Name: {patientName}</p>
       <p>Reason: {reason}</p>
     </div>

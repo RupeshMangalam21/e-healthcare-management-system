@@ -15,7 +15,6 @@
 }
 
 
-
 .navbar {
   height: 85px;
   background: linear-gradient(to right, #6f80f1, #9254d8);
@@ -425,4 +424,17 @@
   }
 }
 
+.footer-menu{
+  list-style: none;
+  text-align: left;
+  margin-left: -20px;
+  margin-top: 18px;
+}
+.footer-menu a{
+  color: aliceblue;
+  text-decoration-line: none;
+}
 
+.footer-menu li{
+  margin-top: 8px;
+}

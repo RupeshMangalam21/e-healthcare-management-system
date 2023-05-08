@@ -2,14 +2,14 @@
     margin-top: 5rem;
     margin-left: 125px;
     height: fit-content;
-    background: darkgray;
+    background: #4c0df052;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
 }
 
 .appointment-card-button{
-    background-color: #ffffff;
+    background-color: #ffffffb8;
     border: none;
     cursor: pointer;
     font-size: 18.5px;
@@ -21,12 +21,54 @@
 }
 
 .appointment-card{
-    background-color: #ffffff;
+    background-color: #ffffffb8;
     border-radius: 5px;
     padding: 10px;
+    text-transform: capitalize;
 }
 
 .appointment-list ul{
     list-style: none;
     margin-left: -30px;
 }
+
+.appointment-card-button  p {
+    margin-top: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.appointment-card-button:hover {
+    background-color: #fafeffd2;
+    transform: translateY(-2px);
+  }
+
+  .appointment-card-button-close{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #ffffffb8;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none !important;
+    border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-left: 0rem;
+    border-radius: 5px;
+}
+
+.appointment-card-button-close:hover {
+    background-color: whitesmoke;
+    transform: translateY(-2px);
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+  }
+
+  .appointment-card-button-close a{
+    text-decoration: none !important;
+    color: white;
+  }
