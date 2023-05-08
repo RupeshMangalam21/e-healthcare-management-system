@@ -98,8 +98,8 @@ function SideBar() {
             <div className="username-id">ID - {auth.currentUser.uid}</div>
           </div>
           <div className="menu-options">
-            {!window.location.pathname.includes('dashboard') && (
-              <Link to="/dashboard" className="menu-option">
+            {!window.location.pathname.includes('DashBoard') && (
+              <Link to="/DashBoard" className="menu-option">
                 Home
               </Link>
             )}
