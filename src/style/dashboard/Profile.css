@@ -9,7 +9,7 @@
 }
 .profile-container{
   padding: 50px;
-  margin-top: 5rem;
+  margin-top: 0rem;
   margin-bottom: 500px;
   background: #4c0df052;
   color: white;
@@ -23,12 +23,12 @@
   margin-top: -65px;
   margin-bottom: 50px;
 }
-.ui-button{
+button.ui-button{
   display: inline-block;
   width: 80px;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background: #0d6efd;
+  background: #ffffffb8;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
   font-size: 14px;
@@ -39,18 +39,18 @@
   cursor: pointer;
   margin-left: 215px;
   border-radius: 5px;
+  color: black;
 }
 
-.ui-button:hover{
-  background-color: #6da2ff;
+button.ui-button:hover{
+  background-color: whitesmoke;
   transform: translateY(-2px);
   color: rgb(0, 0, 0);
   border-radius: 0px;
 }
 
-.ui-button a{
+button.ui-button a{
   text-decoration: none;
-  color: white;
 }
 
 .profile .form-control {
