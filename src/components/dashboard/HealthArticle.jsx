@@ -16,7 +16,7 @@ const HealthArticle = () => {
   return (
     <div className="Health-Article-container">
       <h2 style={{color:'aliceblue'}}>Latest in Healthcare</h2>
-      <input type="text" placeholder="Search articles..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} style={{height:"40px", width:"520px"}}/>
+      <input type="text" placeholder="Search articles..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} style={{height: '40px', width:'520px', borderRadius: '8px', border: 'none', padding: '8px'}}/>
       <div className="Health-Article-list">
         {data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase())).length > 0 ? (
           <ul>
