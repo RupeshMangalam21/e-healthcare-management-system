@@ -5,7 +5,7 @@ import "../../style/home/Feature.css"
 
 
 const Features= () => (
-  <div className="app__bg app__wrapper section__padding" id="awards">
+  <div className="app__header app__wrapper section__padding" id="awards">
     <div className="app__wrapper_info">
       
       <h1 className="headtext__cormorant">Our Features</h1>

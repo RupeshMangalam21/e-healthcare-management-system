@@ -6,6 +6,104 @@
 
 
 
+.header{
+  height: 5.3rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+
+.navbar {
+  height: 85px;
+  background: linear-gradient(to right, #6f80f1, #9254d8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  position: absolute !important;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e1c1c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 6px;
+}
+
+.navbar .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  margin-top: -3px;
+  margin-left: -30px;
+}
+
+.navbar .nav-sign-out {
+  flex-shrink: 0; /* Do not shrink */
+  font-size: 24px;
+  cursor: pointer;
+  color: #1e1c1c;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content vertically */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Footer */

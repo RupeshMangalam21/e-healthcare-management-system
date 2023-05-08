@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
    
-    {CurrentUser ? (
+    {CurrentUser &&(
       <div className="header">
         <nav className="navbar">
           <div className="nav-sign-out">
@@ -25,9 +25,8 @@ const Header = () => {
           </div>
         </nav>
       </div>
-    ) : (
-      <React.Fragment>
-        <nav className="app__navbar">
+    ) }
+      {!CurrentUser &&( <nav className="app__navbar">
           <div className="app__navbar-logo">
             <img src={logo} alt="app__logo" />
           </div>
@@ -99,9 +98,10 @@ const Header = () => {
               </div>
             )}
           </div>
-        </nav>
-      </React.Fragment>
-    )}
+        </nav>)}
+       
+      
+    
     
     </>
   
