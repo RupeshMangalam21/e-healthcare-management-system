@@ -2,7 +2,6 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "../../style/Headerfooter.css";
-import { Link} from 'react-router-dom';
 import logo from "../../assets/logo-img/logo_avah.png";
 
 
@@ -21,16 +20,19 @@ const Header = () => {
           <a href="#about">About</a>
         </li>
        
-       
+        <li className="p__opensans">
+          <a href="#awards">Features</a>
+        </li>
         <li className="p__opensans">
           <a href="#contact">Contact</a>
         </li>
       </ul>
       <div className="app__navbar-login">
-      <Link to="/LogIn" state={"Patient"} className="login-btn"><div>Login</div></Link>
+        <a href="#login" className="p__opensans">
+          Log In / Registration
+        </a>
         <div />
-      
-      </div>
+     </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu
           color="#fff"
@@ -55,11 +57,24 @@ const Header = () => {
                   About
                 </a>
               </li>
-             
-             
+              <li>
+                <a href="#menu" onClick={() => setToggleMenu(false)}>
+                  Menu
+                </a>
+              </li>
+              <li>
+                <a href="#awards" onClick={() => setToggleMenu(false)}>
+                  Awards
+                </a>
+              </li>
               <li>
                 <a href="#contact" onClick={() => setToggleMenu(false)}>
                   Contact
+                </a>
+              </li>
+              <li>
+                <a href="#login" onClick={() => setToggleMenu(false)}>
+                  Login
                 </a>
               </li>
             </ul>
