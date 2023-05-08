@@ -1,12 +1,13 @@
 .profileImage {
     height: 175px;
+    width: 170px;
     object-fit: cover;
     border-radius: 50%;
   }
 
   .offcanvas.show:not(.hiding), .offcanvas.showing {
     transform: none;
-    background: linear-gradient(to right, #99dbe5, #9254d8);
+    background: linear-gradient(to right, #6f80f1, #9254d8);
 }
   .profileContainer{
     text-align: center;
