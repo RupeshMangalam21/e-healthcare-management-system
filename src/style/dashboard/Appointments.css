@@ -24,6 +24,7 @@
     background-color: #ffffffb8;
     border-radius: 5px;
     padding: 10px;
+    text-transform: capitalize;
 }
 
 .appointment-list ul{
@@ -35,6 +36,7 @@
     margin-top: 0.9rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    text-transform: capitalize;
 }
 
 .appointment-card-button:hover {
