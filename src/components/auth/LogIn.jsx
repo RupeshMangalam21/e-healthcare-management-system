@@ -37,7 +37,7 @@ export default function LogIn() {
     return (
     
     <div>
-        <div className="log-form-container" id='login'>
+        <div className="log-form-container  app__header  section__padding" id='login'>
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label color='white' >Email address</Form.Label>
