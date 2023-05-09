@@ -5,16 +5,16 @@ import Modal from 'react-bootstrap/Modal';
 import '../../style/LogIn.css';
 import { auth } from '../../lib/init-firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {Link,Navigate,useLocation} from 'react-router-dom';
+import {Link,Navigate} from 'react-router-dom';
 import {AuthContext} from './AuthProvider';
 
 
 export default function LogIn() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    const location = useLocation();
+    
     const [error, setError] = useState(null);
-    const user=location.state;
+  
     
     function handleClose() {
       setError(null);
@@ -36,8 +36,8 @@ export default function LogIn() {
     }
     return (
     
-    <div className='login-page'>
-        <div className="log-form-container">
+    <div>
+        <div className="log-form-container" id='login'>
        <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label color='white' >Email address</Form.Label>
@@ -52,11 +52,11 @@ export default function LogIn() {
          <Button className="login-btn"  type="submit">
         login
       </Button>
-      {user === 'Patient' ? (
+      
             <div className="sign-btn">
               <Link to={'/SignUp'}>sign up</Link>
             </div>
-          ) : null}
+         
       </div>
     </Form>
     </div>
