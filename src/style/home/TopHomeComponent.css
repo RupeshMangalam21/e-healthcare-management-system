@@ -2,6 +2,10 @@
     background-image: linear-gradient(to right , #449aef, #9BF2E5 );
   }
   
+  .custom__button{
+    background: black;
+    color: white;
+  }
   .app__header-h1 {
     font-family: var(--font-base);
     color: var(--color-golden);

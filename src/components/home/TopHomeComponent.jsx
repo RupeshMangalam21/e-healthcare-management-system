@@ -9,14 +9,12 @@ const TopHomeComponent = () => (
   <div className="app__header app__wrapper section__padding" id="home">
     <div className="app__wrapper_info">
    
-      <h1 className="app__header-h1">The Key To Fine Dining</h1>
+      <h1 className="app__header-h1">Advanced Virtual Administration for Healthcare</h1>
       <p className="p__opensans" style={{ margin: "2rem 0" }}>
-        Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat
-        morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet
-        tellus{" "}
+      The e-Healthcare management system is a web-based project that seeks to provide effective management of employee data and medical data of patients in hospitals and clinics.{" "}
       </p>
       <button type="button" className="custom__button">
-        Explore Menu
+      Get Started
       </button>
     </div>
 
