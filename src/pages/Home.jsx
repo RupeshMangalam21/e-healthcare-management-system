@@ -7,7 +7,8 @@ import AboutUs from '../components/home/AboutUs';
 import ContactUs from '../components/home/ContactUs';
 import { AuthContext } from '../components/auth/AuthProvider';
 import Features from '../components/home/Features';
-
+import Header from '../components/headerfooter/Header'
+import Footer from '../components/headerfooter/Footer'
 const Home = () => {
   const { CurrentUser} = useContext(AuthContext);
   const Navigate = useNavigate();
@@ -18,12 +19,14 @@ const Home = () => {
   }, [CurrentUser,Navigate]);
   return (
    <div>
+  <Header/>
    <TopHomeComponent/>
    <AboutUs/> 
    <Features/>
    <ContactUs/>
 
-   <LogIn/>    
+   <LogIn/>  
+   <Footer/>  
     </div>
       
   );
