@@ -17,12 +17,9 @@ const Footer =()=>{
             <div className="col-xs-6 col-md-3">
               <h6>Categories</h6>
               <ul className="footerlinks">
-                <li ><a href="">Chinese</a></li>
-                <li><a href="">Italian</a></li>
-                <li><a href="">Indian</a></li>
-                <li><a href="">Mexican</a></li>
-                <li><a href="">japanese</a></li>
-                <li><a href="">French</a></li>
+                <li >Prince Panwar</li>
+                <li>Rupesh Mangalam</li>
+      
               </ul>
             </div>
   
