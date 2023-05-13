@@ -1,8 +1,6 @@
 import React from "react";
 import  '../../style/Headerfooter.css';
 import { FaFacebook,FaInstagram,FaTwitter,FaLinkedin } from "react-icons/fa";
- 
-
 
 const Footer =()=>{
     return(
@@ -15,10 +13,10 @@ const Footer =()=>{
             </div>
   
             <div className="col-xs-6 col-md-3">
-              <h6>Categories</h6>
+              <h6>Developers</h6>
               <ul className="footerlinks">
-                <li >Prince Panwar</li>
-                <li>Rupesh Mangalam</li>
+                <li><a href="https://github.com/prince-panwar">Prince Panwar</a></li>
+                <li><a href="https://github.com/RupeshMangalam21">Rupesh Mangalam</a></li>
       
               </ul>
             </div>

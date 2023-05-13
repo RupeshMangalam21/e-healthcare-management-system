@@ -10,7 +10,7 @@
 }
 
 .app__bg {
-  background:linear-gradient(to bottom, rgba(210, 210, 210, 0.616), rgba(198, 198, 198, 0.562)), url("../../assets/home-bg.jpg");
+  background:linear-gradient(to bottom, rgba(210, 210, 210, 0.616), rgba(198, 198, 198, 0.562)), url("../../assets/background-img/login-bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: repeat;

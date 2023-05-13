@@ -8,14 +8,14 @@ const Features= () => (
   <div className="app__header app__wrapper section__padding" id="awards">
     <div className="app__wrapper_info">
       
-      <h1 className="headtext__cormorant">Our Features</h1>
+      <h1 className="headtext__cormorant">Our Services</h1>
 
       <div className="app__laurels_awards">
       <div className="app__laurels_awards-card">
     
     <div className="app__laurels_awards-card_content">
       <p className="p__cormorant" style={{ color: "#DCCA87" }}>
-        Lorem ipsum dolor sit amet 
+        Patient Scheduling System 
       </p>
       <p className="p__opensans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ratione.</p>
     </div>
@@ -26,7 +26,7 @@ const Features= () => (
   
     <div className="app__laurels_awards-card_content">
       <p className="p__cormorant" style={{ color: "#DCCA87" }}>
-        Lorem ipsum dolor sit amet 
+        Electronic Medical Records 
       </p>
       <p className="p__opensans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ratione.</p>
     </div>
@@ -37,7 +37,7 @@ const Features= () => (
    
     <div className="app__laurels_awards-card_content">
       <p className="p__cormorant" style={{ color: "#DCCA87" }}>
-        Lorem ipsum dolor sit amet 
+        Healthcare Awareness 
       </p>
       <p className="p__opensans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ratione.</p>
     </div>
@@ -48,7 +48,7 @@ const Features= () => (
     
     <div className="app__laurels_awards-card_content">
       <p className="p__cormorant" style={{ color: "#DCCA87" }}>
-        Lorem ipsum dolor sit amet 
+        Online Consultation Platform 
       </p>
       <p className="p__opensans">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, ratione.</p>
     </div>

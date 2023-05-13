@@ -1,5 +1,5 @@
 import React from "react";
-import ava from "../../assets/logo-img/logo_avah.png"
+// import ava from "../../assets/logo-img/logo_avah.png"
 import logo from "../../assets/medicine logo.png";
 import "../../style/home/AboutUs.css";
 
