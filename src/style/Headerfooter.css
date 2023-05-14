@@ -246,8 +246,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to right , #449aef, #9BF2E5 );
-
+  /* background-image: linear-gradient(to right , #449aef, #9BF2E5 ); */
+  background: #ffffff21;
   padding: 1rem 2rem;
 }
 

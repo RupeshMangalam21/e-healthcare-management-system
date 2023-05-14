@@ -46,7 +46,7 @@ const Header = () => {
           </ul>
           <div className="app__navbar-login">
             <Link to="/SigninSignupForm">Log In / Registration</Link>
-            <div />
+            {/* <div /> */}
           </div>
           <div className="app__navbar-smallscreen">
             <GiHamburgerMenu

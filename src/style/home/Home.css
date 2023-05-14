@@ -2,6 +2,9 @@
 .section__padding {
   padding: 4rem 6rem;
 }
+body{
+  background-image: linear-gradient(to right , #7e44efc2, #9BF2E5 );
+}
 
 .flex__center {
   display: flex;
