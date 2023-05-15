@@ -2,9 +2,34 @@ import React,{useEffect,useState} from 'react';
 import Header from "../components/headerfooter/Header";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { auth, firestore} from '../lib/init-firebase';
+import { collection, getDocs, query,where} from 'firebase/firestore';
 const MakeAppointments = () => {
  
     const [department,setDepartment]=useState("");
+    const [doctorList,setDoctorList]=useState([]);
+   
+   useEffect( ()=>{
+    const fetchList = async()=>{
+        const userId  =auth.currentUser.uid;
+        const docRef=collection(firestore,'User');
+        const q = query(docRef, where('department', '==', department));
+       getDocs(q).then((querySnapshot)=>{
+          const doctor =[];
+          querySnapshot.forEach((doc)=>{
+            const data = doc.data();
+            doctor.push(data);
+          });
+          setDoctorList(doctor);
+          console.log(doctor);
+
+       }).catch((error)=>{
+        console.log(error);
+       })
+    }
+    fetchList();
+
+    },[department])
 
     return (
         <div>
@@ -33,8 +58,20 @@ const MakeAppointments = () => {
           <option value="Hematology">Hematology</option>
           <option value="Infectious Diseases">Infectious Diseases</option>
           <option value="Physical Therapy and Rehabilitation">Physical Therapy and Rehabilitation</option>
-    </Form.Control>
+          </Form.Control>
             </div>
+            <div>
+        <Form.Label>Doctor</Form.Label>
+        <Form.Select>
+          <option value="">Select...</option>
+          {doctorList.map((doctor) => (
+            <option value={doctor.name} key={doctor.id}>
+              {doctor.name}
+            </option>
+          ))}
+        </Form.Select>
+      </div>
+
             
         </div>
     );
