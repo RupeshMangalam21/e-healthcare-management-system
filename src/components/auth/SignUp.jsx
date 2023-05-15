@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword ,setCustomClaims } from 'firebase/auth';
 import { auth, firestore} from '../../lib/init-firebase';
 import {addDoc,collection} from 'firebase/firestore';
 
@@ -14,7 +14,7 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [error, setError] = useState(null);
-  const [isDoctor,setIsDOctor]=useState(false);
+  const [userType,setUserType]=useState('');
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -22,15 +22,17 @@ export default function SignUp() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const{user} =userCredentials;
-       const userRef = collection(firestore,'Patient')
+     
+       const userRef = collection(firestore,userType)
        const UserUid = userCredentials.user.uid;
        addDoc(userRef,{
         name: username,
+        role: userType,
         email: user.email,
         userId: UserUid,
        }).then(()=>{
         console.log('New Patient created successfully');
-        navigate('/LogIn');
+        navigate('/');
        }).catch((error)=>{
         setError(error.message)
        });
@@ -39,6 +41,9 @@ export default function SignUp() {
       .catch((error) => {
         setError(error.message);
       });
+  }
+  function handleUserTypeChange(event) {
+    setUserType(event.target.value);
   }
 
   function handleClose() {
@@ -59,9 +64,10 @@ export default function SignUp() {
             <Form.Control type='email' placeholder='Enter email' onChange={(e) => setEmail(e.target.value)} />
           </Form.Group>
           <Form.Label>Select User Type</Form.Label>
-          <Form.Control as="select" >
-                <option>Patient</option>
-                <option>Doctor</option>
+          <Form.Control as="select" value={userType} onChange={handleUserTypeChange}>
+          <option value="">Select...</option>
+          <option value="Patient">Patient</option>
+          <option value="Doctor">Doctor</option>
                
               </Form.Control>
           <Form.Group className='mb-3' controlId='formBasicPassword'>
