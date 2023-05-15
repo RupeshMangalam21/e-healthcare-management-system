@@ -31,6 +31,7 @@ function SideBar() {
   const [show, setShow] = useState(false);
   const [userData, setUserData] = useState("");
   const [ImageUrl,setImageUrl]=useState("");
+  const[userType,setUserType]=useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const addPhoto = (event) => {
@@ -73,6 +74,44 @@ function SideBar() {
       }
     });
   }, [ImageUrl]);
+
+
+
+
+  useEffect(() => {
+    const checkUserType = async () => {
+      if (!CurrentUser) return;
+      const userId = auth.currentUser.uid;
+  
+      const userQuery = query(collection(firestore, 'User'), where('userId', '==', userId));
+      const userSnapshot = await getDocs(userQuery);
+  
+      if (!userSnapshot.empty) {
+        const userData = userSnapshot.docs[0].data();
+        const role = userData.role;
+  
+        if (role === 'Patient') {
+          setUserType('Patient');
+          // User is a patient, route to UserDashboard
+        
+        } else if (role === 'Doctor') {
+          // User is a doctor, route to DoctorDashboard
+          setUserType('Doctor');
+        
+        } else {
+          // Handle other roles or show error message
+          console.log('Unknown user role');
+        }
+      } else {
+        // User not found in the User collection, handle accordingly (e.g., show error message)
+        console.log('User not found in User collection');
+      }
+    };
+  
+    if (CurrentUser) {
+      checkUserType();
+    }
+  }, [CurrentUser,Navigate]);
  
   return (
     <div className="sidebar-container">
@@ -98,8 +137,13 @@ function SideBar() {
             <div className="username-id">ID - {auth.currentUser.uid}</div>
           </div>
           <div className="menu-options">
-            {!window.location.pathname.includes('DashBoard') && (
+            {!window.location.pathname.includes('DashBoard') && userType ==='Patient'&&(
               <Link to="/DashBoard" className="menu-option">
+                Home
+              </Link>
+            )}
+            {!window.location.pathname.includes('DashBoard') && userType ==='Doctor'&&(
+              <Link to="/DoctorDashBoard" className="menu-option">
                 Home
               </Link>
             )}
