@@ -11,14 +11,14 @@ import { useContext } from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { AuthContext } from '../components/auth/AuthProvider';
 import { signOut } from 'firebase/auth';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 function SideBar() {
   const { CurrentUser } = useContext(AuthContext);
   const Navigate = useNavigate();
-  const location = useLocation();
+
 
   const handleSignOut = () => {
     signOut(auth)
@@ -40,12 +40,12 @@ function SideBar() {
     uploadBytes(storageRef, file)
       .then(() => {
         getDownloadURL(storageRef).then((url) => {
-          const userRef = collection(firestore, 'Patient');
+          const userRef = collection(firestore, 'User');
           const q = query(userRef, where('userId', '==', userId));
           getDocs(q).then((querySnapshot) => {
             if (!querySnapshot.empty) {
               const userDoc = querySnapshot.docs[0];
-              const userDocRef = doc(firestore, 'Patient', userDoc.id);
+              const userDocRef = doc(firestore, 'User', userDoc.id);
               updateDoc(userDocRef, { profileURL: url }).then(() => {
                 setImageUrl(userData.profileURL)
               }).catch((error) => {
@@ -61,7 +61,7 @@ function SideBar() {
   
     useEffect(() => {
     const userId = auth.currentUser.uid;
-    const userRef = collection(firestore, 'Patient');
+    const userRef = collection(firestore, 'User');
     const q = query(userRef, where('userId', '==', userId));
     getDocs(q).then((querySnapshot) => {
       if (!querySnapshot.empty) {

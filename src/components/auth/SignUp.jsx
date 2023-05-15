@@ -5,7 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, firestore} from '../../lib/init-firebase';
 import {addDoc,collection} from 'firebase/firestore';
-
 import { useNavigate } from 'react-router-dom';
 import "../../style/SignUp.css"
 
@@ -23,7 +22,7 @@ export default function SignUp() {
       .then((userCredentials) => {
         const{user} =userCredentials;
      
-       const userRef = collection(firestore,userType)
+       const userRef = collection(firestore,'User')
        const UserUid = userCredentials.user.uid;
        addDoc(userRef,{
         name: username,
