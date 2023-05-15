@@ -14,6 +14,7 @@ export default function SignUp() {
   const [username, setUsername] = useState('');
   const [error, setError] = useState(null);
   const [userType,setUserType]=useState('');
+  const [department,setDepartment]=useState('');
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -26,6 +27,7 @@ export default function SignUp() {
        const UserUid = userCredentials.user.uid;
        addDoc(userRef,{
         name: username,
+        department: department,
         role: userType,
         email: user.email,
         userId: UserUid,
@@ -67,8 +69,31 @@ export default function SignUp() {
           <option value="">Select...</option>
           <option value="Patient">Patient</option>
           <option value="Doctor">Doctor</option>
-               
-              </Form.Control>
+         </Form.Control>
+         <Form.Label>Department</Form.Label>
+    <Form.Control as="select" value={department} onChange={(e)=>setDepartment(e.target.value)}>
+          <option value="">Select...</option>
+          <option value="General">General</option>
+          <option value="Pediatrics">Pediatrics</option> 
+          <option value="Cardiology">Cardiology</option>
+          <option value="Orthopedics">Orthopedics</option>
+          <option value="Obstetrics and Gynecology">Obstetrics and Gynecology</option>
+          <option value="Neurology">Neurology</option>
+          <option value="Oncology">Oncology</option>
+          <option value="Dermatology">Dermatology</option>
+          <option value="Ophthalmology">Ophthalmology</option>
+          <option value="Radiology">Radiology</option>
+          <option value="Anesthesiology">Anesthesiology</option>
+          <option value="Psychiatry">Psychiatry</option>
+          <option value="Gastroenterology">Gastroenterology</option>
+          <option value="Nephrology">Nephrology</option>
+          <option value="Pulmonology">Pulmonology</option>
+          <option value="Urology">Urology</option>
+          <option value="Endocrinology">Endocrinology</option>
+          <option value="Hematology">Hematology</option>
+          <option value="Infectious Diseases">Infectious Diseases</option>
+          <option value="Physical Therapy and Rehabilitation">Physical Therapy and Rehabilitation</option>
+    </Form.Control>
           <Form.Group className='mb-3' controlId='formBasicPassword'>
             <Form.Label>Password</Form.Label>
             <Form.Control type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
