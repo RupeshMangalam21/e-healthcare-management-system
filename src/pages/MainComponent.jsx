@@ -7,6 +7,7 @@ import Home from './Home'
 import Profile from "../pages/Profile";
 import MakeAppointments from "../pages/MakeAppointments"
 import SignUp from "../components/auth/SignUp";
+import DoctorDashboard from './DoctorDashboard'
 export default function MainComponent() {
   return (
     <div>
@@ -16,6 +17,7 @@ export default function MainComponent() {
       
         <Route element={<PrivateRoute/>}>
           <Route path='/DashBoard' element={<DashBoard/>}/>
+          <Route path='/DoctorDashBoard' element={<DoctorDashboard/>}/>
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/MakeAppointments" element={<MakeAppointments/>}/>
           </Route>   
