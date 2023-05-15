@@ -6,7 +6,9 @@ import DashBoard from './DashBoard'
 import Home from './Home'
 import Profile from "../pages/Profile";
 import MakeAppointments from "../pages/MakeAppointments"
-import SigninSignupForm from '../components/auth/SigninSignupForm'
+import SignUp from "../components/auth/SignUp";
+import DoctorDashboard from './DoctorDashboard'
+import LogIn from '../components/auth/LogIn'
 export default function MainComponent() {
   return (
     <div>
@@ -16,11 +18,12 @@ export default function MainComponent() {
       
         <Route element={<PrivateRoute/>}>
           <Route path='/DashBoard' element={<DashBoard/>}/>
+          <Route path='/DoctorDashBoard' element={<DoctorDashboard/>}/>
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/MakeAppointments" element={<MakeAppointments/>}/>
           </Route>   
-       
-         <Route path='/SigninSignupForm' element={<SigninSignupForm/>}/>
+          <Route path='/logIn' element={<LogIn/>}/>
+      <Route path='/SignUp' element={<SignUp/>}/>
       </Routes>
 </AuthProvider>
   </div>
