@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from '../components/headerfooter/Header';
-import AddMedicalHistory from '../components/dashboard/AddMedicalHistory';
+import ShowMedicalHistory from '../components/dashboard/ShowMedicalHistory';
 const DoctorDashboard = () => {
     return (
         <div>
-        <Header/>
-        <AddMedicalHistory/>    
+        <div> <Header/></div>
+       <div className='ShowMedicalHistory-container'><ShowMedicalHistory/></div>
+          
         </div>
     );
 }

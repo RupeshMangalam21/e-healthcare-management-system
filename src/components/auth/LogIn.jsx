@@ -1,4 +1,4 @@
-import React, { useState,useContext} from 'react'
+import React, { useState,useContext, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -8,16 +8,17 @@ import { auth, firestore} from '../../lib/init-firebase';
 import { collection, query, where, getDocs} from 'firebase/firestore';
 
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {Link,Navigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {AuthContext} from './AuthProvider';
 
 
 export default function LogIn() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    const Navigate = useNavigate();
+   const [isLoading,setIsLoading] =useState(true);
     const [error, setError] = useState(null);
-  
+    const Navigate = useNavigate();
+    const {CurrentUser} = useContext(AuthContext)
     
     function handleClose() {
       setError(null);
@@ -34,6 +35,7 @@ export default function LogIn() {
       
     }
     const checkUserType = async () => {
+       if(!CurrentUser) return;
       const userId = auth.currentUser.uid;
 
       // Check if the user exists in the Patient collection
@@ -60,10 +62,20 @@ export default function LogIn() {
       console.log('User not found in Patient or Doctor collection');
     };
 
-    const {CurrentUser} = useContext(AuthContext)
-    if(CurrentUser){
-    checkUserType();
-     }
+  
+    useEffect(() => {
+      if (CurrentUser) {
+        checkUserType();
+      } else {
+        setIsLoading(false);
+      }
+    }, [CurrentUser]);
+  
+    if (isLoading) {
+      // Display loading state while authentication is being initialized
+      return <div>Loading...</div>;
+    }
+   
     return (
     
     <div>

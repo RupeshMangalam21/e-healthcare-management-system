@@ -1,83 +1,137 @@
-import React, {useState } from 'react';
+import React,{useState,useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
-import { firestore } from '../../lib/init-firebase';
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import HistoryCard from './HistoryCard';
 import Form from 'react-bootstrap/Form';
-const AddMedicalHistory = () => {
-    const [medicalHistory, setMedicalHistory] = useState([]);
-    const [selectedItem,setSelectedItem]= useState("");
-    const [userId,setUserId]=useState("");
-  
-    const handleUserHistory = (e) => {
-     
-      e.preventDefault();
-          const userRef = collection(firestore, 'MedicalHistory');
-          const q = query(userRef, where('patientId', '==', userId));
-      
-          getDocs(q)
-            .then((querySnapshot) => {
-              const history = [];
-              querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                history.push(data);
-              });
-              setMedicalHistory(history);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
-      
-      
-    const handleClick =(item)=>{
-      setSelectedItem(item);
-  }
-    const handleClose=()=>{
-      setSelectedItem(null);
-    }
-  
-    return (
-      <div className="medical-history-container">
-        <h2 style={{color:'aliceblue'}}>Medical History</h2>
-        <Form onSubmit={handleUserHistory}>
-        <Form.Group className='mb-3' controlId='formBasicName'>
-            <Form.Label>Enter Patient ID</Form.Label>
-            <Form.Control type='text' placeholder='ID' onChange={(e)=>setUserId(e.target.value)} />
-            <Button  type='submit'>
-              Enter
-            </Button>
-          </Form.Group>
-        </Form>
+import { serverTimestamp } from 'firebase/firestore';
+import { auth, firestore} from '../../lib/init-firebase';
+import {addDoc,collection, query, where, getDocs,} from 'firebase/firestore';
+const AddMedicalHistory = ({patient}) => {
+    const [date, setDate] = useState("");
+    const [patientName, setPatientName] = useState("");
+    const [diagnosis, setDiagnosis] = useState("");
+    const [docId, setDocId] = useState("");
+   const [doctorName, setDoctorName] = useState("");
+   
+    const [prescription, setPrescription] = useState("");
+    const [remark, setRemark] = useState("");
+
+    
+   
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    const historyRef =collection(firestore,'MedicalHistory')
+    addDoc(historyRef,{
+        Date: serverTimestamp(),
+        patientName: patientName,
+        doctorName: doctorName,
+        docId: docId,
+        patientId: patient,
+        diagnosis:diagnosis,
+        prescription:prescription,
+        remark: remark,
+    }).catch((error)=>{
+        console.log(error);
+    })
        
-        {selectedItem ? (
-          <div>
-          <HistoryCard item={selectedItem}/>
-          <button className='medical-card-button' onClick={() => handleClose()}>close</button>
-          </div>
-        ) : (
-          <div className="medical-history-list">
-            {medicalHistory.length > 0 ? (
-              <ul>
-                {medicalHistory.map((item) => (
-                  <li key={item.medicalHistoryId}>
-                    <button onClick={() => handleClick(item)} style={{width:"755px"}}>
-                      <div className="history-item">
-                        <div className="history-item-info">
-                        <p> {new Date(item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} -- Physician: {item.doctorName}</p>
-                        </div>
-                      </div>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No medical history found.</p>
-            )}
-          </div>
-        )}
-      </div>
-    );
-            }  
+        setDate("");
+        setPatientName("");
+        setDiagnosis("");
+        setDocId("");
+       
+        setDoctorName("");
+       
+        setPrescription("");
+        setRemark("");
+      };
+     
+     
+      useEffect(() => {
+        
+        const doctorRef = collection(firestore, 'Doctor');
+        const doctorQuery = query(doctorRef, where('userId', '==', docId));
+        getDocs(doctorQuery)
+          .then((querySnapshot) => {
+            if (!querySnapshot.empty) {
+              const doctorDoc = querySnapshot.docs[0];
+              const doctorData = doctorDoc.data();
+              setDoctorName(doctorData.name);
+              console.log(doctorData);
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching Doctor data:', error);
+          });
+      }, [docId]);
+
+      useEffect(() => {
+      // Fetch Patient data
+      setDocId(auth.currentUser.uid) ;
+        const patientRef = collection(firestore, 'Patient');
+        const patientQuery = query(patientRef, where('userId', '==', patient));
+        getDocs(patientQuery).then((querySnapshot) => {
+          if (!querySnapshot.empty) {
+            const patientDoc = querySnapshot.docs[0];
+            const patientData = patientDoc.data();
+            setPatientName(patientData.name);
+            
+          }
+        }).catch((error) => {
+          console.error('Error fetching Patient data:', error);
+        });
+      }, [patient]);
+      
+    
+      return (
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formDate">
+            
+    
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>Patient Name</Form.Label>
+            <Form.Control type="text" defaultValue={patientName} />
+          </Form.Group>
+    
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>Doctor Name</Form.Label>
+            <Form.Control type="text" defaultValue={doctorName}  />
+          </Form.Group>
+         
+       
+         
+       
+          </Form.Group>
+         
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>Patient ID</Form.Label>
+            <Form.Control type="text" value={patient} />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>Doctor ID</Form.Label>
+            <Form.Control type="text" value={docId} />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>Diagnosis</Form.Label>
+            <Form.Control type="text" value={diagnosis} onChange={(e) => setDiagnosis(e.target.value)} />
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>prescription</Form.Label>
+            <Form.Control type="text" value={prescription} onChange={(e) => setPrescription(e.target.value)} />
+          </Form.Group>
+         
+          <Form.Group className="mb-3" controlId="formDiagnosis">
+            <Form.Label>Remark</Form.Label>
+            <Form.Control type="text" value={remark} onChange={(e) => setRemark(e.target.value)} />
+          </Form.Group>
+         
+         
+    
+    
+    
+          <Button type="submit">Submit</Button>
+        </Form>
+      );
+    };
+    
 
 export default AddMedicalHistory;
