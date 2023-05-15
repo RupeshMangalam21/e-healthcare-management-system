@@ -7,7 +7,7 @@ import Home from './Home'
 import Profile from "../pages/Profile";
 import MakeAppointments from "../pages/MakeAppointments"
 import SignUp from "../components/auth/SignUp";
-import DoctorDashboard from './DoctorDashboard'
+import DoctorDashboard from '../pages/DoctorDashboard'
 import LogIn from '../components/auth/LogIn'
 export default function MainComponent() {
   return (
