@@ -5,19 +5,18 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import DatePicker from 'react-datepicker';
 import { auth, firestore} from '../lib/init-firebase';
-import { Firestore, collection, getDocs, query,where} from 'firebase/firestore';
+import {addDoc, collection, getDocs, query,where} from 'firebase/firestore';
 import "../style/MakeAppointment.css"
 const MakeAppointments = () => {
  
     const [department,setDepartment]=useState("");
     const [doctorList,setDoctorList]=useState([]);
-    const [selectedDoctor,setSelectedDoctor]=useState();
-    const [docId,setDocId]=useState();
+    const [selectedDoctor,setSelectedDoctor]=useState([]);
     const [date,setDate]=useState();
    
    useEffect( ()=>{
     const fetchList = async()=>{
-        
+      
         const docRef=collection(firestore,'User');
         const q = query(docRef, where('department', '==', department));
        getDocs(q).then((querySnapshot)=>{
@@ -37,14 +36,50 @@ const MakeAppointments = () => {
 
     },[department])
 
-    const HandleSubmit=(e)=>{
+   
+    const HandleSubmit = (e) => {
         e.preventDefault();
-      const  AppointRef=collection(firestore,'Appointment');
+        console.log(selectedDoctor);
+      
+        const userId = auth.currentUser.uid;
+        const userRef = collection(firestore, 'User');
+        const q = query(userRef, where('userId', '==', userId));
+        getDocs(q)
+          .then((querySnapshot) => {
+            if (!querySnapshot.empty) {
+              const userDoc = querySnapshot.docs[0];
+              const userName = userDoc.data().name;
+      
+              const userid = auth.currentUser.uid;
+              const AppointRef = collection(firestore, 'appointment');
+              addDoc(AppointRef, {
+                patientName: userName,
+                patientId: userid,
+                doctorName: selectedDoctor.name,
+                doctorId: selectedDoctor.userId,
+                date: date,
+              })
+                .then(() => {
+                  // Success
+                  console.log('Appointment added successfully');
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+          setDate("");
+          setSelectedDoctor("");
+
+      };
       
 
 
 
-    }
+    
 
     return (
         <div>
@@ -81,7 +116,7 @@ const MakeAppointments = () => {
         <Form.Select onChange={(e)=>setSelectedDoctor(e.target.value)}>
           <option value="">Select...</option>
           {doctorList.map((doctor) => (
-            <option value={doctor.name} key={doctor.id}  >
+            <option value={doctor} key={doctor.id}  >
               {doctor.name}
             </option>
           ))}
