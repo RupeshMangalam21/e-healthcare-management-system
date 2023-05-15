@@ -6,7 +6,7 @@ import logo from "../../assets/logo-img/logo_avah.png";
 import React, { useContext } from 'react';
 import { AuthContext } from '../auth/AuthProvider';
 import SideBar from '../SideBar';
-import { Link } from "react-router-dom";
+
 const Header = () => {
   const { CurrentUser } = useContext(AuthContext);
   const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -45,7 +45,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="app__navbar-login">
-            <Link to="/SigninSignupForm">Log In / Registration</Link>
+          <a href="#login">Login|Register</a>
             <div />
           </div>
           <div className="app__navbar-smallscreen">
