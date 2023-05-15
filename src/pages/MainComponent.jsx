@@ -8,6 +8,7 @@ import Profile from "../pages/Profile";
 import MakeAppointments from "../pages/MakeAppointments"
 import SignUp from "../components/auth/SignUp";
 import DoctorDashboard from './DoctorDashboard'
+import LogIn from '../components/auth/LogIn'
 export default function MainComponent() {
   return (
     <div>
@@ -21,6 +22,7 @@ export default function MainComponent() {
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/MakeAppointments" element={<MakeAppointments/>}/>
           </Route>   
+          <Route path='/logIn' element={<LogIn/>}/>
       <Route path='/SignUp' element={<SignUp/>}/>
       </Routes>
 </AuthProvider>

@@ -5,7 +5,7 @@ import { serverTimestamp } from 'firebase/firestore';
 import { auth, firestore} from '../../lib/init-firebase';
 import {addDoc,collection, query, where, getDocs,} from 'firebase/firestore';
 const AddMedicalHistory = ({patient}) => {
-    const [date, setDate] = useState("");
+   
     const [patientName, setPatientName] = useState("");
     const [diagnosis, setDiagnosis] = useState("");
     const [docId, setDocId] = useState("");
@@ -32,13 +32,11 @@ const AddMedicalHistory = ({patient}) => {
         console.log(error);
     })
        
-        setDate("");
+       
         setPatientName("");
         setDiagnosis("");
         setDocId("");
-       
         setDoctorName("");
-       
         setPrescription("");
         setRemark("");
       };
