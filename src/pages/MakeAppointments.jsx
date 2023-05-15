@@ -1,17 +1,23 @@
 import React,{useEffect,useState} from 'react';
 import Header from "../components/headerfooter/Header";
+import 'react-datepicker/dist/react-datepicker.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import DatePicker from 'react-datepicker';
 import { auth, firestore} from '../lib/init-firebase';
-import { collection, getDocs, query,where} from 'firebase/firestore';
+import { Firestore, collection, getDocs, query,where} from 'firebase/firestore';
+import "../style/MakeAppointment.css"
 const MakeAppointments = () => {
  
     const [department,setDepartment]=useState("");
     const [doctorList,setDoctorList]=useState([]);
+    const [selectedDoctor,setSelectedDoctor]=useState();
+    const [docId,setDocId]=useState();
+    const [date,setDate]=useState();
    
    useEffect( ()=>{
     const fetchList = async()=>{
-        const userId  =auth.currentUser.uid;
+        
         const docRef=collection(firestore,'User');
         const q = query(docRef, where('department', '==', department));
        getDocs(q).then((querySnapshot)=>{
@@ -20,7 +26,7 @@ const MakeAppointments = () => {
             const data = doc.data();
             doctor.push(data);
           });
-          setDoctorList(doctor);
+        setDoctorList(doctor);
           console.log(doctor);
 
        }).catch((error)=>{
@@ -31,10 +37,20 @@ const MakeAppointments = () => {
 
     },[department])
 
+    const HandleSubmit=(e)=>{
+        e.preventDefault();
+      const  AppointRef=collection(firestore,'Appointment');
+      
+
+
+
+    }
+
     return (
         <div>
             <div><Header/></div>
-            <div style={{marginTop:"4rem"}}>
+          
+        <Form style={{marginTop:"4rem"}} onSubmit={HandleSubmit}>
     <Form.Label>Department</Form.Label>
     <Form.Control as="select" value={department} onChange={(e)=>setDepartment(e.target.value)}>
           <option value="">Select...</option>
@@ -59,18 +75,31 @@ const MakeAppointments = () => {
           <option value="Infectious Diseases">Infectious Diseases</option>
           <option value="Physical Therapy and Rehabilitation">Physical Therapy and Rehabilitation</option>
           </Form.Control>
-            </div>
+            
             <div>
         <Form.Label>Doctor</Form.Label>
-        <Form.Select>
+        <Form.Select onChange={(e)=>setSelectedDoctor(e.target.value)}>
           <option value="">Select...</option>
           {doctorList.map((doctor) => (
-            <option value={doctor.name} key={doctor.id}>
+            <option value={doctor.name} key={doctor.id}  >
               {doctor.name}
             </option>
           ))}
         </Form.Select>
+ <DatePicker
+  selected={date}
+  onChange={(date) => setDate(date)}
+  showTimeSelect
+  timeFormat="HH:mm"
+  timeIntervals={15}
+  dateFormat="MMMM d, yyyy h:mm aa"
+/>
+
+
       </div>
+
+ <Button type='submit'>Submit</Button>
+      </Form>
 
             
         </div>
