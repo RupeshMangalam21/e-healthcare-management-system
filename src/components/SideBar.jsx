@@ -11,14 +11,14 @@ import { useContext } from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { AuthContext } from '../components/auth/AuthProvider';
 import { signOut } from 'firebase/auth';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 function SideBar() {
   const { CurrentUser } = useContext(AuthContext);
   const Navigate = useNavigate();
-  const location = useLocation();
+
 
   const handleSignOut = () => {
     signOut(auth)
@@ -31,6 +31,7 @@ function SideBar() {
   const [show, setShow] = useState(false);
   const [userData, setUserData] = useState("");
   const [ImageUrl,setImageUrl]=useState("");
+  const[userType,setUserType]=useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const addPhoto = (event) => {
@@ -40,12 +41,12 @@ function SideBar() {
     uploadBytes(storageRef, file)
       .then(() => {
         getDownloadURL(storageRef).then((url) => {
-          const userRef = collection(firestore, 'Patient');
+          const userRef = collection(firestore, 'User');
           const q = query(userRef, where('userId', '==', userId));
           getDocs(q).then((querySnapshot) => {
             if (!querySnapshot.empty) {
               const userDoc = querySnapshot.docs[0];
-              const userDocRef = doc(firestore, 'Patient', userDoc.id);
+              const userDocRef = doc(firestore, 'User', userDoc.id);
               updateDoc(userDocRef, { profileURL: url }).then(() => {
                 setImageUrl(userData.profileURL)
               }).catch((error) => {
@@ -61,7 +62,7 @@ function SideBar() {
   
     useEffect(() => {
     const userId = auth.currentUser.uid;
-    const userRef = collection(firestore, 'Patient');
+    const userRef = collection(firestore, 'User');
     const q = query(userRef, where('userId', '==', userId));
     getDocs(q).then((querySnapshot) => {
       if (!querySnapshot.empty) {
@@ -73,6 +74,44 @@ function SideBar() {
       }
     });
   }, [ImageUrl]);
+
+
+
+
+  useEffect(() => {
+    const checkUserType = async () => {
+      if (!CurrentUser) return;
+      const userId = auth.currentUser.uid;
+  
+      const userQuery = query(collection(firestore, 'User'), where('userId', '==', userId));
+      const userSnapshot = await getDocs(userQuery);
+  
+      if (!userSnapshot.empty) {
+        const userData = userSnapshot.docs[0].data();
+        const role = userData.role;
+  
+        if (role === 'Patient') {
+          setUserType('Patient');
+          // User is a patient, route to UserDashboard
+        
+        } else if (role === 'Doctor') {
+          // User is a doctor, route to DoctorDashboard
+          setUserType('Doctor');
+        
+        } else {
+          // Handle other roles or show error message
+          console.log('Unknown user role');
+        }
+      } else {
+        // User not found in the User collection, handle accordingly (e.g., show error message)
+        console.log('User not found in User collection');
+      }
+    };
+  
+    if (CurrentUser) {
+      checkUserType();
+    }
+  }, [CurrentUser,Navigate]);
  
   return (
     <div className="sidebar-container">
@@ -98,8 +137,13 @@ function SideBar() {
             <div className="username-id">ID - {auth.currentUser.uid}</div>
           </div>
           <div className="menu-options">
-            {!window.location.pathname.includes('DashBoard') && (
+            {!window.location.pathname.includes('DashBoard') && userType ==='Patient'&&(
               <Link to="/DashBoard" className="menu-option">
+                Home
+              </Link>
+            )}
+            {!window.location.pathname.includes('DashBoard') && userType ==='Doctor'&&(
+              <Link to="/DoctorDashBoard" className="menu-option">
                 Home
               </Link>
             )}

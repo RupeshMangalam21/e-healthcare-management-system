@@ -15,7 +15,7 @@ import {AuthContext} from './AuthProvider';
 export default function LogIn() {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-   const [isLoading,setIsLoading] =useState(true);
+  
     const [error, setError] = useState(null);
     const Navigate = useNavigate();
     const {CurrentUser} = useContext(AuthContext)
@@ -34,47 +34,39 @@ export default function LogIn() {
         })
       
     }
-    const checkUserType = async () => {
-       if(!CurrentUser) return;
-      const userId = auth.currentUser.uid;
-
-      // Check if the user exists in the Patient collection
-      const patientQuery = query(collection(firestore, 'Patient'), where('userId', '==', userId));
-      const patientSnapshot = await getDocs(patientQuery);
-
-      if (!patientSnapshot.empty) {
-        // User found in the Patient collection, route to UserDashboard
-        Navigate('/DashBoard');
-        return;
-      }
-
-      // Check if the user exists in the Doctor collection
-      const doctorQuery = query(collection(firestore, 'Doctor'), where('userId', '==', userId));
-      const doctorSnapshot = await getDocs(doctorQuery);
-
-      if (!doctorSnapshot.empty) {
-        // User found in the Doctor collection, route to DoctorDashboard
-        Navigate('/DoctorDashBoard');
-        return;
-      }
-
-      // User not found in either collection, handle accordingly (e.g., show error message)
-      console.log('User not found in Patient or Doctor collection');
-    };
-
-  
     useEffect(() => {
+      const checkUserType = async () => {
+        if (!CurrentUser) return;
+        const userId = auth.currentUser.uid;
+    
+        const userQuery = query(collection(firestore, 'User'), where('userId', '==', userId));
+        const userSnapshot = await getDocs(userQuery);
+    
+        if (!userSnapshot.empty) {
+          const userData = userSnapshot.docs[0].data();
+          const role = userData.role;
+    
+          if (role === 'Patient') {
+            // User is a patient, route to UserDashboard
+            Navigate('/Dashboard');
+          } else if (role === 'Doctor') {
+            // User is a doctor, route to DoctorDashboard
+            Navigate('/DoctorDashboard');
+          } else {
+            // Handle other roles or show error message
+            console.log('Unknown user role');
+          }
+        } else {
+          // User not found in the User collection, handle accordingly (e.g., show error message)
+          console.log('User not found in User collection');
+        }
+      };
+    
       if (CurrentUser) {
         checkUserType();
-      } else {
-        setIsLoading(false);
       }
-    }, [CurrentUser]);
-  
-    if (isLoading) {
-      // Display loading state while authentication is being initialized
-      return <div>Loading...</div>;
-    }
+    }, [CurrentUser,Navigate]);
+    
    
     return (
     

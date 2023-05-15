@@ -1,6 +1,7 @@
 import React from "react";
 import doctor from "../../assets/Doctor-img-home.jpeg";
 import "../../style/home/TopHomeComponent.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -14,7 +15,8 @@ const TopHomeComponent = () => (
       The e-Healthcare management system is a web-based project that seeks to provide effective management of employee data and medical data of patients in hospitals and clinics.{" "}
       </p>
       <button type="button" className="custom__button">
-      Get Started
+        <Link to={"/signUp"} style={{textDecoration:"none", color:"white"}}>Get Started</Link>
+      
       </button>
     </div>
 
