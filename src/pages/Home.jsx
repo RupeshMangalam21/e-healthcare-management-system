@@ -2,7 +2,7 @@ import {React,useContext, useEffect}from 'react';
 import "../style/home/Home.css";
 import { useNavigate} from 'react-router-dom';
 import TopHomeComponent from '../components/home/TopHomeComponent';
-// import LogIn from '../components/auth/LogIn';
+import LogIn from '../components/auth/LogIn';
 import AboutUs from '../components/home/AboutUs';
 import ContactUs from '../components/home/ContactUs';
 import { AuthContext } from '../components/auth/AuthProvider';
@@ -24,7 +24,7 @@ const Home = () => {
    <AboutUs/> 
    <Features/>
    <ContactUs/>
-   {/* <LogIn/>   */}
+   <LogIn/>  
    <Footer/>  
     </div>
       

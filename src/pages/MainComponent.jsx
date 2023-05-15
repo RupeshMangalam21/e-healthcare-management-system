@@ -6,7 +6,7 @@ import DashBoard from './DashBoard'
 import Home from './Home'
 import Profile from "../pages/Profile";
 import MakeAppointments from "../pages/MakeAppointments"
-import SigninSignupForm from '../components/auth/SigninSignupForm'
+import SignUp from "../components/auth/SignUp";
 export default function MainComponent() {
   return (
     <div>
@@ -19,8 +19,7 @@ export default function MainComponent() {
           <Route path="/Profile" element={<Profile/>}/>
           <Route path="/MakeAppointments" element={<MakeAppointments/>}/>
           </Route>   
-       
-         <Route path='/SigninSignupForm' element={<SigninSignupForm/>}/>
+      <Route path='/SignUp' element={<SignUp/>}/>
       </Routes>
 </AuthProvider>
   </div>
