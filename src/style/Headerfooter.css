@@ -301,12 +301,15 @@
   margin-top: -1rem;
   text-decoration: none;
   transition: 0.5s ease;
-  padding: 15px;
+  padding: 12px;
   font-size: 20px;
+  color: rgb(0, 0, 0);
+  background-color: #eceeef7c;
+  border-radius: 10px;
 }
 
 .app__navbar-login a:hover {
-  border-bottom: 1px solid #1ebc92;
+  color: #621ebc;
 }
 
 .app__navbar-login div {

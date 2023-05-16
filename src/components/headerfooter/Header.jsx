@@ -45,8 +45,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="app__navbar-login">
-          <a href="#login">Login|Register</a>
-            <div />
+          <a href="#login">Sign In</a>
           </div>
           <div className="app__navbar-smallscreen">
             <GiHamburgerMenu
