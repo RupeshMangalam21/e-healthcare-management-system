@@ -1,6 +1,6 @@
 .Health-Article-container{
   border-radius: 12px;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-left: 125px;
   margin-right: 0px;
   margin-bottom: 170px;
@@ -58,7 +58,7 @@
 .Article-item p {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+  color: #000000;
 }
 
 .Health-Article-list ul{
@@ -69,7 +69,7 @@
 }
 
 .Health-Article-list a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
 }

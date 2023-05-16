@@ -84,15 +84,12 @@ const MakeAppointments = () => {
         SetSuccess(false);
       }
 
-
-
-    
-
     return (
         <div>
-            <div><Header/></div>
-          
-        <Form style={{marginTop:"4rem"}} onSubmit={HandleSubmit}>
+          <div>
+          <Header/>
+
+    <Form style={{marginTop:"4rem"}} onSubmit={HandleSubmit}>
     <Form.Label>Department</Form.Label>
     <Form.Control as="select" value={department} onChange={(e)=>setDepartment(e.target.value)}>
           <option value="">Select...</option>
@@ -154,6 +151,7 @@ const MakeAppointments = () => {
         </Modal.Footer>
       </Modal>
             
+        </div>
         </div>
     );
 }

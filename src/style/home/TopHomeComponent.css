@@ -8,12 +8,13 @@
   }
   .app__header-h1 {
     font-family: var(--font-base);
-    color: var(--color-golden);
+    color: black;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: capitalize;
-    line-height: 117px;
-    font-size: 90px;
+    line-height: 100px;
+    font-size: 80px;
+    margin-top: -125px;
   }
   
   .app__header-img img {
