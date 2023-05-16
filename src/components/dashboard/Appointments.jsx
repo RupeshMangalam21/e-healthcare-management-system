@@ -58,7 +58,7 @@ function Appointments() {
                       <div className="appointment-item-info">
                         <p>
                           {new Date(
-                            appointment.Date.seconds * 1000
+                            appointment.date.seconds * 1000
                           ).toLocaleDateString('en-US', {
                             month: 'long',
                             day: 'numeric',
