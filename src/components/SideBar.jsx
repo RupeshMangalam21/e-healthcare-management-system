@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 
 function SideBar() {
   const { CurrentUser } = useContext(AuthContext);
+  const [role,SetRole]=useState("");
   const Navigate = useNavigate();
 
 
@@ -71,6 +72,7 @@ function SideBar() {
         if (userDoc.data().profileURL) {
           setImageUrl(userDoc.data().profileURL);
         }
+        SetRole(userDoc.data().role);
       }
     });
   }, [ImageUrl]);
@@ -150,9 +152,9 @@ function SideBar() {
             <Link to="/Profile" className="menu-option">
               Profile
             </Link>
-            <Link to="/MakeAppointments" className="menu-option">
+            { role!=="Doctor" &&(<Link to="/MakeAppointments" className="menu-option">
               Appointments
-            </Link>
+            </Link>)}
           </div>
         </Offcanvas.Body>
         {CurrentUser && (
