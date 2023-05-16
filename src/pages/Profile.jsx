@@ -13,7 +13,7 @@ function Profile() {
 
   useEffect(() => {
     const userId = auth.currentUser.uid;
-    const userRef = collection(firestore, 'Patient');
+    const userRef = collection(firestore, 'User');
     const q = query(userRef, where('userId', '==', userId));
     getDocs(q).then((querySnapshot) => {
       if (!querySnapshot.empty) {

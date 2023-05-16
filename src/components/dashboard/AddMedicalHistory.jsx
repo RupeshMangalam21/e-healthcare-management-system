@@ -44,7 +44,7 @@ const AddMedicalHistory = ({patient}) => {
      
       useEffect(() => {
         
-        const doctorRef = collection(firestore, 'Doctor');
+        const doctorRef = collection(firestore, 'User');
         const doctorQuery = query(doctorRef, where('userId', '==', docId));
         getDocs(doctorQuery)
           .then((querySnapshot) => {
@@ -63,7 +63,7 @@ const AddMedicalHistory = ({patient}) => {
       useEffect(() => {
       // Fetch Patient data
       setDocId(auth.currentUser.uid) ;
-        const patientRef = collection(firestore, 'Patient');
+        const patientRef = collection(firestore, 'User');
         const patientQuery = query(patientRef, where('userId', '==', patient));
         getDocs(patientQuery).then((querySnapshot) => {
           if (!querySnapshot.empty) {
