@@ -12,17 +12,33 @@ function Appointments() {
     const userId = auth.currentUser.uid;
     const appointmentsRef = collection(firestore, 'appointment');
     const q = query(appointmentsRef, where('patientId', '==', userId));
-
-    getDocs(q).then((querySnapshot) => {
-      const appts = [];
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        appts.push(data);
+    const q2 = query(appointmentsRef, where('doctorId', '==', userId));
+  
+    getDocs(q)
+      .then((querySnapshot) => {
+        if (querySnapshot.empty) {
+          return q2;
+        } else {
+          return q;
+        }
+      })
+      .then((selectedQuery) => {
+        return getDocs(selectedQuery);
+      })
+      .then((querySnapshot) => {
+        const appts = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          appts.push(data);
+        });
+  
+        setAppointments(appts);
+      })
+      .catch((error) => {
+        console.log('Error getting documents: ', error);
       });
-      
-      setAppointments(appts);
-    });
   }, []);
+  
 
   const handleSelectAppointment = (appointment) => {
     setSelectedAppointment(appointment);
@@ -58,7 +74,7 @@ function Appointments() {
                       <div className="appointment-item-info">
                         <p>
                           {new Date(
-                            appointment.Date.seconds * 1000
+                            appointment.date.seconds * 1000
                           ).toLocaleDateString('en-US', {
                             month: 'long',
                             day: 'numeric',

@@ -6,12 +6,14 @@ import Form from 'react-bootstrap/Form';
 import DatePicker from 'react-datepicker';
 import { auth, firestore} from '../lib/init-firebase';
 import {addDoc, collection, getDocs, query,where} from 'firebase/firestore';
+import Modal from 'react-bootstrap/Modal';
 import "../style/MakeAppointment.css"
 const MakeAppointments = () => {
  
     const [department,setDepartment]=useState("");
     const [doctorList,setDoctorList]=useState([]);
     const [selectedDoctor,setSelectedDoctor]=useState([]);
+    const [Success,SetSuccess]=useState(false);
     const [date,setDate]=useState();
    
    useEffect( ()=>{
@@ -61,7 +63,7 @@ const MakeAppointments = () => {
               })
                 .then(() => {
                   // Success
-                  console.log('Appointment added successfully');
+                SetSuccess(true);
                 })
                 .catch((error) => {
                   console.log(error);
@@ -71,11 +73,16 @@ const MakeAppointments = () => {
           .catch((error) => {
             console.log(error);
           });
+       
           setDate("");
           setSelectedDoctor("");
+          setDepartment("");
 
       };
       
+      const handleModalClose=()=>{
+        SetSuccess(false);
+      }
 
 
 
@@ -113,10 +120,10 @@ const MakeAppointments = () => {
             
             <div>
         <Form.Label>Doctor</Form.Label>
-        <Form.Select onChange={(e)=>setSelectedDoctor(e.target.value)}>
+        <Form.Select onChange={(e)=>setSelectedDoctor(JSON.parse(e.target.value))}>
           <option value="">Select...</option>
           {doctorList.map((doctor) => (
-            <option value={doctor} key={doctor.id}  >
+            <option value={JSON.stringify(doctor)} key={doctor.id}  >
               {doctor.name}
             </option>
           ))}
@@ -135,7 +142,17 @@ const MakeAppointments = () => {
 
  <Button type='submit'>Submit</Button>
       </Form>
-
+      <Modal show={Success === true} onHide={handleModalClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Success</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Appointment requested successfully</Modal.Body>
+        <Modal.Footer>
+          <Button variant='secondary' onClick={handleModalClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
             
         </div>
     );
