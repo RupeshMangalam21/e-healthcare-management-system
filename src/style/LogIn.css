@@ -24,7 +24,7 @@
   border-radius: 15px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.548);
   opacity: 1 !important;
-  max-height: 350px;
+  max-height: 390px;
   background-color: rgba(0, 0, 0, 0.554);
   color: white;
   margin-bottom: 8px;
@@ -59,6 +59,31 @@
   background-image: linear-gradient(to right, #1083e1a1, #32c8d0a1, #54d894b4);
   transform: translateY(-2px);
   border-radius: 0px ;
+}
+button.ui-button-li{
+  display: inline-block;
+  width: 150px;
+  margin-top: 30px;
+  padding: 0.5rem 0rem;
+  background: #ffffffb8;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-left: 80px;
+  border-radius: 5px;
+  color: black;
+}
+
+button.ui-button-li:hover{
+  background-color: whitesmoke;
+  transform: translateY(-2px);
+  color: rgb(0, 0, 0);
+  border-radius: 0px;
 }
 
 .sign-btn {
@@ -96,6 +121,36 @@
   background-image: linear-gradient(to right, #1083e1, #32c8d0, #54d894);
   transform: translateY(-2px);
   color: white;
+}
+
+.ui-button-si{
+  display: inline-block;
+  width: 150px;
+  margin-top: 30px;
+  padding: 0.5rem 0rem;
+  background: #ffffffb8;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-left: 80px;
+  border-radius: 5px;
+  color: black;
+}
+.ui-button-si a{
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  margin-left: 43px;
+  color: black;
+}
+.ui-button-si:hover{
+  background-color: whitesmoke;
+  transform: translateY(-2px);
+  color: rgb(0, 0, 0);
+  border-radius: 0px;
 }
 
 body {
