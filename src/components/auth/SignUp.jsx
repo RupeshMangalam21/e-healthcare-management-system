@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 import { createUserWithEmailAndPassword,sendEmailVerification } from 'firebase/auth';
 import { auth, firestore} from '../../lib/init-firebase';
 import {addDoc,collection} from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import "../../style/SignUp.css"
+
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
@@ -15,8 +16,9 @@ export default function SignUp() {
   const [error, setError] = useState(null);
   const [userType,setUserType]=useState('');
   const [department,setDepartment]=useState('');
+ 
   const navigate = useNavigate();
-
+ 
   function handleSubmit(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
@@ -46,6 +48,7 @@ export default function SignUp() {
   function handleUserTypeChange(event) {
     setUserType(event.target.value);
   }
+
 
   function handleClose() {
     setError(null);
@@ -122,6 +125,8 @@ export default function SignUp() {
           </Button>
         </Modal.Footer>
       </Modal>
+
+     
     </div>
   );
 }

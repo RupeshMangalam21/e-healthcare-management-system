@@ -1,12 +1,25 @@
-import React from 'react';
+import React ,{useContext, useState,useEffect}from 'react';
 import MedicalHistory from './MedicalHistory';
 import HealthArticle from './HealthArticle';
 import Appointments from './Appointments';
 import Header from "../headerfooter/Header";
+import Modal from 'react-bootstrap/Modal';
+import { AuthContext } from '../auth/AuthProvider';
 
 import "../../style/dashboard/UserDashboard.css"
 
 function UserDashboard() {
+  const { CurrentUser } = useContext(AuthContext);
+  const [isMailVerified, setIsMailVerified] = useState(false);
+
+  useEffect(() => {
+    if (CurrentUser && CurrentUser.emailVerified) {
+      setIsMailVerified(true);
+    } else {
+      setIsMailVerified(false);
+    }
+  }, [CurrentUser]);
+   
   return (
     <div>
       <Header/>
@@ -21,6 +34,16 @@ function UserDashboard() {
         <HealthArticle />
       </div>
     </div>
+    <Modal show={!isMailVerified} centered>
+      <Modal.Header>
+        <Modal.Title>Email Verification</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>Please verify your email to continue using the application.</p>
+      </Modal.Body>
+      <Modal.Footer>
+      </Modal.Footer>
+    </Modal>
     </div>
   );
 }
