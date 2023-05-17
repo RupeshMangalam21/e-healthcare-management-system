@@ -43,24 +43,26 @@ function Profile() {
     const userId = auth.currentUser.uid;
     const userRef = collection(firestore, 'User');
     const q = query(userRef, where('userId', '==', userId));
-    getDocs(q,(querySnapshot)=>{
-       if(!querySnapshot.empty){
+    getDocs(q).then((querySnapshot) => {
+      if (!querySnapshot.empty) {
         const userDoc = querySnapshot.docs[0];
-        const userDocRef = doc(firestore, 'User', userDoc.userId);
-        updateDoc(userDocRef,{
+        const userDocRef = doc(firestore, 'User', userDoc.id);
+        updateDoc(userDocRef, {
           name: name,
           age: age,
           gender: gender,
           bloodGroup: bloodGroup,
           phoneNumber: phoneNumber,
           email: email
-        }).then(()=>{
-          console.log("Data Updated Successfully")
-        }).catch((error)=>{
-          console.log(error);
         })
-       }
-    })
+        .then(() => {
+          console.log('User data updated successfully!');
+        })
+        .catch((error) => {
+          console.error('Error updating user data:', error);
+        });
+      }
+    });
   
     
   };
