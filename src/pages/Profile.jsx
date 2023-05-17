@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { firestore, auth } from '../lib/init-firebase';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, updateDoc ,doc} from 'firebase/firestore';
 import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -26,12 +26,11 @@ function Profile() {
   const handleEdit = () => {
     setIsEditing(true);
   };
-  const handleSave=()=>{
-    setIsEditing(false);
-  }
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsEditing(false);
     const form = event.currentTarget;
     const name = form.name.value;
     const age = form.age.value;
@@ -39,6 +38,29 @@ function Profile() {
     const bloodGroup = form.bloodGroup.value;
     const phoneNumber = form.phoneNumber.value;
     const email = form.email.value;
+   
+    const userId = auth.currentUser.uid;
+    const userRef = collection(firestore, 'User');
+    const q = query(userRef, where('userId', '==', userId));
+    getDocs(q,(querySnapshot)=>{
+       if(!querySnapshot.empty){
+        const userDoc = querySnapshot.docs[0];
+        const userDocRef = doc(firestore, 'User', userDoc.userId);
+        updateDoc(userDocRef,{
+          name: name,
+          age: age,
+          gender: gender,
+          bloodGroup: bloodGroup,
+          phoneNumber: phoneNumber,
+          email: email
+        }).then(()=>{
+          console.log("Data Updated Successfully")
+        }).catch((error)=>{
+          console.log(error);
+        })
+       }
+    })
+  
     
   };
 
@@ -77,11 +99,10 @@ function Profile() {
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" defaultValue={userData.email} disabled={!isEditing} />
             </Form.Group>
-           
-          </Form>
-          {isEditing?(  <button className='ui-button' onClick={handleSave}>Save</button>):(   
               
-            <Button className='ui-button' onClick={handleEdit}>Edit</Button>)}
+          {isEditing && (  <Button className='ui-button' type='submit' >Save</Button>)}
+          </Form>
+      {!isEditing&&(<Button className='ui-button' onClick={handleEdit}>Edit</Button>)}
      
         </div>
       )}
