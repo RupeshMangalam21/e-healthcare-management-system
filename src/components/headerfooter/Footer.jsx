@@ -9,7 +9,7 @@ const Footer =()=>{
           <div className="row">
             <div className="col-sm-12 col-md-6">
               <h6>About</h6>
-              <p className="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime corporis exercitationem adipisci ratione eaque ex doloremque qui quos sapiente amet voluptatibus, velit, molestiae mollitia nam iure error aut delectus harum.</p>
+              <p className="text-justify">At AVA-H, we are driven by a passion for transforming healthcare delivery and making a positive difference in people's lives. Join us on this journey as we reshape the future of healthcare together.</p>
             </div>
   
             <div className="col-xs-6 col-md-3">
@@ -37,7 +37,7 @@ const Footer =()=>{
         <div className="container">
           <div className="row">
             <div className="col-sm-6 col-xs-12">
-              <p className="copyrighttext">Copyright &copy; 2017 All Rights Reserved by 
+              <p className="copyrighttext">Copyright &copy; 2017 All Rights Reserved by AVA-H
            <a href="#"></a>.
               </p>
             </div>

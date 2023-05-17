@@ -38,7 +38,7 @@ const Header = () => {
               <a href="#about">About</a>
             </li>
             <li className="p__opensans">
-              <a href="#awards">Features</a>
+              <a href="#awards">Services</a>
             </li>
             <li className="p__opensans">
               <a href="#contact">Contact</a>
@@ -78,7 +78,7 @@ const Header = () => {
                   </li>
                   <li>
                     <a href="#awards" onClick={() => setToggleMenu(false)}>
-                      Awards
+                      Services
                     </a>
                   </li>
                   <li>
