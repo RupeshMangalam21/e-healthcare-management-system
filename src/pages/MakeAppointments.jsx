@@ -8,8 +8,9 @@ import { auth, firestore} from '../lib/init-firebase';
 import {addDoc, collection, getDocs, query,where} from 'firebase/firestore';
 import Modal from 'react-bootstrap/Modal';
 import "../style/MakeAppointment.css"
+import Footer from '../components/headerfooter/Footer'
+
 const MakeAppointments = () => {
- 
     const [department,setDepartment]=useState("");
     const [doctorList,setDoctorList]=useState([]);
     const [selectedDoctor,setSelectedDoctor]=useState([]);
@@ -84,16 +85,13 @@ const MakeAppointments = () => {
         SetSuccess(false);
       }
 
-
-
-    
-
     return (
         <div>
-            <div><Header/></div>
-          
-        <Form style={{marginTop:"4rem"}} onSubmit={HandleSubmit}>
-    <Form.Label>Department</Form.Label>
+          <div>
+          <Header/>
+    <div className="mappointments-container">
+    <Form onSubmit={HandleSubmit}>
+    <Form.Label className='form-label-ma'>Department</Form.Label>
     <Form.Control as="select" value={department} onChange={(e)=>setDepartment(e.target.value)}>
           <option value="">Select...</option>
           <option value="General">General</option>
@@ -119,7 +117,7 @@ const MakeAppointments = () => {
           </Form.Control>
             
             <div>
-        <Form.Label>Doctor</Form.Label>
+        <Form.Label className='form-label-ma'>Doctor</Form.Label>
         <Form.Select onChange={(e)=>setSelectedDoctor(JSON.parse(e.target.value))}>
           <option value="">Select...</option>
           {doctorList.map((doctor) => (
@@ -128,6 +126,7 @@ const MakeAppointments = () => {
             </option>
           ))}
         </Form.Select>
+ <Form.Label className='form-label-ma'>Date</Form.Label>
  <DatePicker
   selected={date}
   onChange={(date) => setDate(date)}
@@ -140,7 +139,7 @@ const MakeAppointments = () => {
 
       </div>
 
- <Button type='submit'>Submit</Button>
+ <Button className='ui-button-ma' type='submit'>Submit</Button>
       </Form>
       <Modal show={Success === true} onHide={handleModalClose}>
         <Modal.Header closeButton>
@@ -148,13 +147,17 @@ const MakeAppointments = () => {
         </Modal.Header>
         <Modal.Body>Appointment requested successfully</Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={handleModalClose}>
+          <Button className='ui-button-ma' variant='secondary' onClick={handleModalClose}>
             Close
           </Button>
         </Modal.Footer>
       </Modal>
             
         </div>
+        </div>
+        <Footer/>
+        </div>
+        
     );
 }
 

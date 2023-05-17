@@ -106,11 +106,11 @@ export default function SignUp() {
             <Form.Control type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
           </Form.Group>
 
-          <div className='create-btn'>
-            <Button className='create' type='submit'>
+          {/* <div className='create-btn'> */}
+            <Button className='ui-button-su' type='submit'>
               Create account
             </Button>
-          </div>
+          {/* </div> */}
         </Form>
       </div>
 
@@ -120,7 +120,7 @@ export default function SignUp() {
         </Modal.Header>
         <Modal.Body>{error}</Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
+          <Button className='ui-button-su' variant='secondary' onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

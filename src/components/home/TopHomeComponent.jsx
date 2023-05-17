@@ -1,10 +1,7 @@
 import React from "react";
-import doctor from "../../assets/Doctor-img-home.jpeg";
+import doctor from "../../assets/doctor.svg";
 import "../../style/home/TopHomeComponent.css";
 import { Link } from "react-router-dom";
-
-
-
 
 const TopHomeComponent = () => (
   <div className="app__header app__wrapper section__padding" id="home">
@@ -20,8 +17,8 @@ const TopHomeComponent = () => (
       </button>
     </div>
 
-    <div className="app__wrapper_img">
-      <img src={doctor} alt="header_img" />
+    <div className="app__wrapper_img-tc">
+      <img src={doctor} alt="header_img" style={{height:'20rem', marginTop:'-240px'}} />
     </div>
   </div>
 );

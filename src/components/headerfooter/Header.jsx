@@ -2,7 +2,7 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "../../style/Headerfooter.css";
-import logo from "../../assets/logo-img/logo_avah.png";
+import logo from "../../assets/logo-img/avahlogo.png";
 import React, { useContext } from 'react';
 import { AuthContext } from '../auth/AuthProvider';
 import SideBar from '../SideBar';
@@ -45,8 +45,7 @@ const Header = () => {
             </li>
           </ul>
           <div className="app__navbar-login">
-          <a href="#login">Login|Register</a>
-            <div />
+          <a href="#login">Sign In</a>
           </div>
           <div className="app__navbar-smallscreen">
             <GiHamburgerMenu

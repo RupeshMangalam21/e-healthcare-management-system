@@ -5,7 +5,8 @@ import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "../style/dashboard/Profile.css";
-
+import Header from '../components/headerfooter/Header'
+import Footer from '../components/headerfooter/Footer'
 
 function Profile() {
   const [userData, setUserData] = useState(null);
@@ -65,6 +66,8 @@ function Profile() {
   };
 
   return (
+    <div>
+    <Header/>
     <div className="profile-container">
       {userData && (
         <div className="profile">
@@ -106,6 +109,8 @@ function Profile() {
      
         </div>
       )}
+    </div>
+    <Footer/>
     </div>
   );
 }

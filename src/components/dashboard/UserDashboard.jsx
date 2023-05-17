@@ -5,6 +5,8 @@ import Appointments from './Appointments';
 import Header from "../headerfooter/Header";
 import Modal from 'react-bootstrap/Modal';
 import { AuthContext } from '../auth/AuthProvider';
+import NearbyHospitals from './NearbyHospitals';
+import Footer from '../headerfooter/Footer'
 
 import "../../style/dashboard/UserDashboard.css"
 
@@ -26,7 +28,7 @@ function UserDashboard() {
     <div className="row">
     <div className="col-md-6">
         <MedicalHistory />
-        
+        <NearbyHospitals />
         
       </div>
       <div className="col-md-7">
@@ -44,6 +46,7 @@ function UserDashboard() {
       <Modal.Footer>
       </Modal.Footer>
     </Modal>
+    <Footer/>
     </div>
   );
 }
