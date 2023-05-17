@@ -2,6 +2,8 @@
 .react-datepicker {
     display: inline-block;
     position: relative;
+    margin-left: 47px;
+    margin-top: 15px;
   }
   
   .react-datepicker__header {
@@ -71,3 +73,45 @@
     color: #ccc;
   }
   
+.mappointments-container{
+  padding: 40px;
+  margin-bottom: 500px;
+  background: #4c0df052;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 525px;
+  margin-top: 200px;
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 88%);
+}
+
+button.ui-button-ma{
+  display: inline-block;
+  width: 80px;
+  margin-top: 30px;
+  padding: 0.5rem 0rem;
+  background: #ffffffb8;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-left: 104px;
+  border-radius: 5px;
+  color: black;
+}
+
+button.ui-button-ma:hover{
+  background-color: whitesmoke;
+  transform: translateY(-2px);
+  color: rgb(0, 0, 0);
+  border-radius: 0px;
+}
+
+.form-label-ma {
+  margin-bottom: 12px;
+  margin-top: 12px;
+}

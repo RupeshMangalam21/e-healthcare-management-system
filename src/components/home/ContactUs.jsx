@@ -1,6 +1,5 @@
 import React from "react";
-
-import contact from "../../assets/contact us.png";
+import contact from "../../assets/findus.svg";
 
 const ContactUs = () => (
   <div className="app__bg app__wrapper section__padding" id="contact">
@@ -11,16 +10,16 @@ const ContactUs = () => (
       </h1>
       <div className="app__wrapper-content">
         <p className="p__opensans">
-          Lane Ends Bungalow, Whatcroft Hall Lane, Rudheath, CW9 75G
+          Block B1 Chandigarh University, Mohali
         </p>
         <p
           className="p__cormorant"
-          style={{ color: "#DCCA87", margin: "2rem 0" }}
+          style={{ color: "#00ff39", margin: "2rem 0" }}
         >
           Opening Hours
         </p>
-        <p className="p__opensans">Mon - Fri: 10:00 am - 02:00 am</p>
-        <p className="p__opensans">Sat - Sun: 10:00 am - 03:00 am</p>
+        <p className="p__opensans">Mon - Fri: 10:00 am - 02:00 pm</p>
+        <p className="p__opensans">Sat - Sun: 10:00 am - 03:00 pm</p>
       </div>
       <button
         type="button"

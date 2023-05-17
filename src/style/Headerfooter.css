@@ -59,11 +59,11 @@
 /* Footer */
 .sitefooter
 {
-  background-color:#26272b;
+  background-color: rgb(8 8 8 / 81%);
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  color: #fff;
 }
 .sitefooter hr
 {
@@ -94,7 +94,8 @@
 .footerlinks
 {
   padding-left:0;
-  list-style:none
+  list-style:none;
+  text-decoration: none;
 }
 .footerlinks li
 {
@@ -102,11 +103,12 @@
 }
 .footerlinks a
 {
-  color:#737373
+  color: aliceblue;
+  text-decoration: none;
 }
 .footerlinks a:active,.footerlinks a:focus,.footerlinks a:hover
 {
-  color:red;
+  color:rgb(45, 69, 191);
   text-decoration:none;
 }
 .footerlinks.inline li
@@ -115,7 +117,8 @@
 }
 .sitefooter .social-icons
 {
-  text-align:right
+  text-align:right;
+  margin-right: -230px;
 }
 .sitefooter .social-icons a
 {
@@ -125,11 +128,11 @@
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color:#33353d
+  background-color: #ffffff;
 }
 .copyrighttext
 {
-  margin:0
+  margin: 8px;
 }
 @media (max-width:991px)
 {
@@ -170,7 +173,7 @@
 }
 .social-icons a{
   background-color:#eceeef;
-  color:#818a91;
+  color: #0dcaf0;
   font-size:16px;
   display:inline-block;
   line-height:44px;
@@ -243,11 +246,11 @@
 
 .app__navbar {
   width: 100%;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to right , #449aef, #9BF2E5 );
-
+  background: #ffffff21;
   padding: 1rem 2rem;
 }
 
@@ -258,7 +261,8 @@
 }
 
 .app__navbar-logo img {
-  width: 150px;
+  width: 90px;
+  border-radius: 15px;
 }
 
 .app__navbar-links {
@@ -266,7 +270,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: auto;
   list-style: none;
 }
 
@@ -295,18 +299,23 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 15px;
 }
 
 .app__navbar-login a {
   margin-top: -1rem;
   text-decoration: none;
   transition: 0.5s ease;
-  padding: 15px;
+  padding: 12px;
   font-size: 20px;
+  font-family: monospace;
+  color: rgb(0, 0, 0);
+  background-color: #eceeef7c;
+  border-radius: 20px;
 }
 
 .app__navbar-login a:hover {
-  border-bottom: 1px solid #1ebc92;
+  color: #621ebc;
 }
 
 .app__navbar-login div {

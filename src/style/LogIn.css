@@ -14,7 +14,7 @@
 
 .log-form-container {
   display: grid;
-  height: 90vh;
+  height: 100vh;
   place-items: center;
 }
 
@@ -27,7 +27,7 @@
   max-height: 350px;
   background-color: rgba(0, 0, 0, 0.554);
   color: white;
-  margin-bottom: 145px;
+  margin-bottom: 8px;
 }
 
 .log-btn .login-btn {

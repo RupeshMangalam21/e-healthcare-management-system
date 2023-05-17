@@ -16,10 +16,8 @@ const AboutUs = () => (
       <div className="app__aboutus-content_about">
         <h1 className="headtext__cormorant">About Us</h1>
        
-        <p className="p__opensans">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis pharetra
-          adipiscing ultrices vulputate posuere tristique. In sed odio nec
-          aliquet eu proin mauris et.
+        <p className="p__opensans-a">
+        At AVA-H, we are dedicated to providing exceptional healthcare solutions and services to improve the well-being of individuals and communities. With a team of highly skilled professionals, we strive to make a positive impact in the healthcare industry.
         </p>
         <button type="button" className="custom__button">
           Know More
@@ -31,12 +29,10 @@ const AboutUs = () => (
       </div>
 
       <div className="app__aboutus-content_history">
-        <h1 className="headtext__cormorant">Our History</h1>
+        <h1 className="headtext__cormorant">Our Mission</h1>
        
         <p className="p__opensans">
-          Adipiscing tempus ullamcorper lobortis odio tellus arcu volutpat.
-          Risus placerat morbi volutpat habitasse interdum mi aliquam In sed
-          odio nec aliquet.
+        Our mission is to deliver innovative technologies and solutions that enhance patient care, streamline processes, and drive efficiency. We understand the importance of seamless coordination among healthcare providers and aim to facilitate effective collaboration through our cutting-edge platforms.
         </p>
         <button type="button" className="custom__button">
           Know More
