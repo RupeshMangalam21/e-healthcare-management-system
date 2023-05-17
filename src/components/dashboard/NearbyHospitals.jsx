@@ -10,6 +10,7 @@ const containerStyle = {
 const NearbyHospitals = () => {
   const [location, setLocation] = useState(null);
   const [hospitals, setHospitals] = useState([]);
+  const [loading, setLoading] = useState(true); // New loading state
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: 'AIzaSyBTuI9DITbyWfwCDrgY-eC5pAPi2S0S52A',
     libraries: ['places'],
@@ -27,7 +28,8 @@ const NearbyHospitals = () => {
   }, []);
 
   useEffect(() => {
-    if (location) {
+    if (location && isLoaded && loading) {
+      setLoading(false); // Set loading state to false once the API is loaded
       const service = new window.google.maps.places.PlacesService(document.createElement('div'));
       service.nearbySearch(
         {
@@ -42,7 +44,7 @@ const NearbyHospitals = () => {
         }
       );
     }
-  }, [location]);
+  }, [location, isLoaded, loading]);
 
   const handleMarkerClick = (hospital) => {
     const { lat, lng } = hospital.geometry.location;
@@ -58,7 +60,7 @@ const NearbyHospitals = () => {
         </div>
         <div className="card2-body">
           <LoadScript googleMapsApiKey="AIzaSyBTuI9DITbyWfwCDrgY-eC5pAPi2S0S52A" libraries={['places']} onLoad={() => {}}>
-            {isLoaded && (
+            {isLoaded && !loading ? ( // Render the GoogleMap only when API is loaded and not in the loading state
               <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={14}>
                 {hospitals.map((hospital) => (
                   <Marker
@@ -72,6 +74,8 @@ const NearbyHospitals = () => {
                   />
                 ))}
               </GoogleMap>
+            ) : (
+              <div>Loading Google Maps...</div>
             )}
           </LoadScript>
         </div>
@@ -81,6 +85,7 @@ const NearbyHospitals = () => {
 };
 
 export default NearbyHospitals;
+
 
 
 // AIzaSyBTuI9DITbyWfwCDrgY-eC5pAPi2S0S52A

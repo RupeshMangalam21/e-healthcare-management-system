@@ -4,6 +4,7 @@ import HealthArticle from './HealthArticle';
 import Appointments from './Appointments';
 import Header from "../headerfooter/Header";
 import NearbyHospitals from './NearbyHospitals';
+import Footer from '../headerfooter/Footer'
 
 import "../../style/dashboard/UserDashboard.css"
 
@@ -22,6 +23,7 @@ function UserDashboard() {
         <HealthArticle />
       </div>
     </div>
+    <Footer/>
     </div>
   );
 }
