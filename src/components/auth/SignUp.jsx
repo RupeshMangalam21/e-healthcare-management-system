@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import Form from 'react-bootstrap/Form';
+import { createUserWithEmailAndPassword,sendEmailVerification } from 'firebase/auth';
 import { auth, firestore} from '../../lib/init-firebase';
 import {addDoc,collection} from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import "../../style/SignUp.css"
-
 
 
 export default function SignUp() {
@@ -17,15 +16,15 @@ export default function SignUp() {
   const [error, setError] = useState(null);
   const [userType,setUserType]=useState('');
   const [department,setDepartment]=useState('');
+ 
   const navigate = useNavigate();
-
+ 
   function handleSubmit(e) {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         const{user} =userCredentials;
-     
-       const userRef = collection(firestore,'User')
+       sendEmailVerification(user).then(()=>{ const userRef = collection(firestore,'User')
        const UserUid = userCredentials.user.uid;
        addDoc(userRef,{
         name: username,
@@ -38,7 +37,8 @@ export default function SignUp() {
         navigate('/');
        }).catch((error)=>{
         setError(error.message)
-       });
+       });})
+      
        
       })
       .catch((error) => {
@@ -48,6 +48,7 @@ export default function SignUp() {
   function handleUserTypeChange(event) {
     setUserType(event.target.value);
   }
+
 
   function handleClose() {
     setError(null);
@@ -71,7 +72,9 @@ export default function SignUp() {
           <option value="">Select...</option>
           <option value="Patient">Patient</option>
           <option value="Doctor">Doctor</option>
-         </Form.Control>
+          </Form.Control>
+        {userType==='Doctor' && ( 
+          <>
          <Form.Label>Department</Form.Label>
     <Form.Control as="select" value={department} onChange={(e)=>setDepartment(e.target.value)}>
           <option value="">Select...</option>
@@ -96,6 +99,8 @@ export default function SignUp() {
           <option value="Infectious Diseases">Infectious Diseases</option>
           <option value="Physical Therapy and Rehabilitation">Physical Therapy and Rehabilitation</option>
     </Form.Control>
+    </>
+    )}
           <Form.Group className='mb-3' controlId='formBasicPassword'>
             <Form.Label>Password</Form.Label>
             <Form.Control type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
@@ -120,6 +125,8 @@ export default function SignUp() {
           </Button>
         </Modal.Footer>
       </Modal>
+
+     
     </div>
   );
 }
