@@ -354,6 +354,9 @@
 
 .app__navbar-smallscreen_links {
   list-style: none;
+  text-decoration:none;
+  color:white;
+  
 }
 
 .app__navbar-smallscreen_links li {
