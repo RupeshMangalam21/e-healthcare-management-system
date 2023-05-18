@@ -15,10 +15,13 @@
       width: 769px;
     }
 .medical-history-text{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    text-transform: capitalize;
+  margin-top: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .medical-history-list ul {

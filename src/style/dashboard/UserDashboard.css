@@ -67,7 +67,11 @@
   .map-container ,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container {
     width: 75%;
   
-  }}
+  }
+  .appointment-text{
+    font-size: smaller;
+  }
+}
 
 
 
