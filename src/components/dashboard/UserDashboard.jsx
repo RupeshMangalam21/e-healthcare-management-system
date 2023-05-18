@@ -24,16 +24,21 @@ function UserDashboard() {
    
   return (
     <div>
-      <Header/>
+    <Header />
     <div className="row">
-    <div className="col-md-6">
+      <div className="col-md-6">
         <MedicalHistory />
         <NearbyHospitals />
-        
       </div>
-      <div className="col-md-7">
-      <Appointments />
-        <HealthArticle />
+      <div className="col-md-6">
+        <div className="row">
+          <div className="col-sm-12">
+            <Appointments />
+          </div>
+          <div className="col-sm-12">
+            <HealthArticle />
+          </div>
+        </div>
       </div>
     </div>
     <Modal show={!isMailVerified} centered>

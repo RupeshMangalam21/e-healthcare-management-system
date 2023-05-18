@@ -3,7 +3,8 @@
     margin-left: 23px;
     background-color:#4c0df052;
     width: 785px;
-    height: fit-content;
+    height: 400px;
+    overflow:hidden;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
@@ -13,7 +14,7 @@
       text-align: left;
       width: 769px;
     }
-.history-item-info p{
+.medical-history-text{
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -26,19 +27,19 @@
     padding: 0;
   }
   
-  .medical-history-list button {
+  .button-mh {
     background-color: #ffffffb8!important;
     border: none;
     cursor: pointer;
     font-size: 18.5px;
     text-align: left;
-    width: 100%;
+    width:750px;
     border-radius: 10px;
     margin-top: 8px;
     padding: 5px;
   }
   
-  .medical-history-list button:hover {
+  .button-mh:hover {
     background-color: #fafeffd2!important;
     transform: translateY(-2px);
   }
@@ -78,3 +79,39 @@
     color: rgb(0, 0, 0);
     border-radius: 0px;
   }
+ 
+  
+  @media screen and (max-width: 1405px) {
+    .medical-history-container ,.medical-history-text{
+      width: 97%;
+
+    }
+    .button-mh{
+      width: 99%;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .medical-history-container,.medical-history-text {
+      width: 85%;
+    }
+    .button-mh{
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .medical-history-container,.medical-history-text {
+      width: 80%;
+    }
+    .medical-history-text{
+      font-size: smaller;
+    }
+   
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .medical-history-container,.button-mh,.medical-history-text {
+    
+    }}

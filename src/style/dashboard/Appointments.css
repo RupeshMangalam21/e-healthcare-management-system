@@ -1,7 +1,8 @@
 .appointments-container{
     margin-top: 9rem;
     margin-left: 125px;
-    height: fit-content;
+    height: 400px;
+    overflow: auto;
     background: #4c0df052;
     border-radius: 10px;
     padding: 15px;
