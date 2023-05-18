@@ -12,7 +12,11 @@ Head over to [Contributing](https://github.com/RupeshMangalam21/e-healthcare-man
 
 PULL REQUESTS: 
 
-Head over to [PullRequests]() for the format of PRs.
+Head over to [PullRequests](.github/PULL_REQUEST_TEMPLATE.md) for the format of PRs.
+
+ISSUES:
+
+New Issue [template](.github/ISSUE_TEMPLATE/new-issue.md).
 
 CODESPACE:
 
