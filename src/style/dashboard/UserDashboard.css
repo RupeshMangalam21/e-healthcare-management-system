@@ -41,6 +41,13 @@
   margin-left: 12px;
   padding: 8px;
 }
+.Health-Article-Search{
+  height: 40px;
+  width:520px; 
+  borderRadius: 8px;
+   border: none;
+   padding: 8px;
+}
 
 @media screen and (max-width: 1405px) {
   .map-container,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container {
@@ -64,7 +71,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .map-container ,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container {
+  .map-container ,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container,.Health-Article-Search {
     width: 75%;
   
   }
