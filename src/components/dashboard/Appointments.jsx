@@ -72,7 +72,7 @@ function Appointments() {
                   >
                     <div className="appointment-item">
                       <div className="appointment-item-info">
-                        <p>
+                        <p className='appointment-text'>
                           {new Date(
                             appointment.date.seconds * 1000
                           ).toLocaleDateString('en-US', {

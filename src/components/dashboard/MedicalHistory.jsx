@@ -45,10 +45,10 @@ function MedicalHistory() {
             <ul>
               {medicalHistory.map((item) => (
                 <li key={item.medicalHistoryId}>
-                  <button onClick={() => handleClick(item)} style={{width:"755px"}}>
+                  <button onClick={() => handleClick(item)} className='button-mh'>
                     <div className="history-item">
                       <div className="history-item-info">
-                      <p> {new Date(item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} -- Physician: {item.doctorName}</p>
+                      <p className='medical-history-text'> {new Date(item.Date.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} -- Doctor: {item.doctorName}</p>
                       </div>
                     </div>
                   </button>
