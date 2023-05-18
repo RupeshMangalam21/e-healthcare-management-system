@@ -1,3 +1,4 @@
+
 .Health-Article-container{
 
     margin-left: 125px;
@@ -70,13 +71,16 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
   .map-container ,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container,.Health-Article-Search {
     width: 75%;
   
   }
   .appointment-text{
     font-size: smaller;
+  }
+  .appointments-container{
+    margin-top: 44px;
   }
 }
 

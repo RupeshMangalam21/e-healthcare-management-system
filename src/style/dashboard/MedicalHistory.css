@@ -114,7 +114,9 @@
     
   }
   
-  /* @media screen and (max-width: 768px) {
-    .medical-history-container,.button-mh,.medical-history-text,.history-item-info {
+  @media screen and (max-width: 768px) {
+    .medical-history-text{
+      font-size: smaller;
+    }
     
-    }} */
+    }
