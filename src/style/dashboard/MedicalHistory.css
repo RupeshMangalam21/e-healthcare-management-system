@@ -4,7 +4,7 @@
     background-color:#4c0df052;
     width: 785px;
     height: 400px;
-    overflow:hidden;
+    overflow: auto;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
@@ -118,5 +118,6 @@
     .medical-history-text{
       font-size: smaller;
     }
+    
     
     }
