@@ -53,7 +53,6 @@ const NearbyHospitals = () => {
   };
 
   return (
-    <div >
       <div className="map-container">
         <div className="card2-header bg-primary text-white">
           <h5 className="mb-0">Nearby Hospitals and Clinics</h5>
@@ -80,7 +79,6 @@ const NearbyHospitals = () => {
           </LoadScript>
         </div>
       </div>
-    </div>
   );
 };
 
