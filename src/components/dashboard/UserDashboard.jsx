@@ -26,27 +26,26 @@ function UserDashboard() {
     <div>
       <Header/>
     <div className="row">
-    <div className="col-md-6">
-        <MedicalHistory />
-        <NearbyHospitals />
-        
-      </div>
-      <div className="col-md-7">
-      <Appointments />
-        <HealthArticle />
-      </div>
+        <div className="col-md-6">
+          <MedicalHistory />
+          <NearbyHospitals /> 
+        </div>
+        <div className="col-md-7">
+          <Appointments />
+          <HealthArticle />
+        </div>
     </div>
-    <Modal show={!isMailVerified} centered>
-      <Modal.Header>
-        <Modal.Title>Email Verification</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p>Please verify your email to continue using the application.</p>
-      </Modal.Body>
-      <Modal.Footer>
-      </Modal.Footer>
-    </Modal>
-    <Footer/>
+      <Modal show={!isMailVerified} centered>
+        <Modal.Header>
+          <Modal.Title>Email Verification</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Please verify your email to continue using the application.</p>
+        </Modal.Body>
+        <Modal.Footer>
+        </Modal.Footer>
+      </Modal>
+      <Footer/>
     </div>
   );
 }

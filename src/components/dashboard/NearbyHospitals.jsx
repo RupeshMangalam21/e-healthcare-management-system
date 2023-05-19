@@ -54,7 +54,7 @@ const NearbyHospitals = () => {
 
   return (
     <div className="map-container">
-      <div className="col-md-8">
+      <div>
         <div className="card2-header bg-primary text-white">
           <h5 className="mb-0">Nearby Hospitals and Clinics</h5>
         </div>
