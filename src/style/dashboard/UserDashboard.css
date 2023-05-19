@@ -1,20 +1,34 @@
+
 .Health-Article-container{
-  border-radius: 12px;
-  margin-top: 50px;
+
+    margin-left: 125px;
+    height: 488px;
+    overflow: auto;
+    display: grid;
+    scrollbar-width: none;
+    background: #4c0df052;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+    margin-top: 44px;
+  
+  /* border-radius: 12px;
+ 
   margin-left: 125px;
   margin-right: 0px;
   margin-bottom: 170px;
-  display: grid;
+ 
   background: #4c0df052;
   padding: 15px;
-  width: 565px;
-  height: 485px;
+  height: 488px;
+  width: 785px;
   overflow-y: overlay;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548); */
 }
-.col-md-8 {
+.map-container{
     height: 488px;
-    width: 800px!important;
+    width: 785px;
     margin-bottom: 12px;
     margin-left: 23px;
     margin-top: 44px;
@@ -28,10 +42,51 @@
   margin-left: 12px;
   padding: 8px;
 }
-.map-container{
-  width: 800px;
-  height: 416px;
+.Health-Article-Search{
+  height: 40px;
+  width:520px; 
+  borderRadius: 8px;
+   border: none;
+   padding: 8px;
 }
+
+@media screen and (max-width: 1405px) {
+  .map-container,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container {
+    width: 98%;
+    margin-left: 23px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .map-container,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container  {
+    width: 85%;
+
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .map-container,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container  {
+    width: 80%;
+  
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .map-container ,.Health-Article-container,.Health-Article-list,.Article-item,.Article-item-info,.appointments-container,.Health-Article-Search {
+    width: 75%;
+  
+  }
+  .appointment-text{
+    font-size: smaller;
+  }
+  .appointments-container{
+    margin-top: 44px;
+  }
+}
+
+
+
+  
 .Article-item {
   display: flex;
   align-items: center;
