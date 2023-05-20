@@ -115,3 +115,32 @@ button.ui-button-ma:hover{
   margin-bottom: 12px;
   margin-top: 12px;
 }
+
+@media screen and (max-width: 1405px) {
+  .mappointments-container {
+  
+    margin-left: 420px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mappointments-container {
+    margin-left: 400px;
+
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mappointments-container {
+    margin-left: 250px;
+  
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .mappointments-container {
+    
+  margin-left: 23px;
+  }
+ 
+}
