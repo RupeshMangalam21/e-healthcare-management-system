@@ -115,3 +115,57 @@ button.ui-button-ma:hover{
   margin-bottom: 12px;
   margin-top: 12px;
 }
+
+@media screen and (max-width: 1405px) {
+  .mappointments-container {
+  
+    margin-left: 420px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mappointments-container {
+    margin-left: 400px;
+
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .mappointments-container {
+    margin-left: 250px;
+  
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .mappointments-container {
+    
+  margin-left: 124px;
+  }
+ 
+}
+@media screen and (max-width: 550px){
+  .mappointments-container {
+   
+    margin-left: 60px;
+  }}
+  @media screen and (max-width: 480px){
+    .mappointments-container {
+     
+      margin-left: 40px;
+    }}
+    @media screen and (max-width: 440px){
+      .mappointments-container {
+       
+        margin-left: 20px;
+      }}
+      @media screen and (max-width: 400px){
+        .mappointments-container {
+         
+          margin-left: 10px;
+        }}
+        @media screen and (max-width: 375px){
+          .mappointments-container {
+           
+            margin-left: 0px;
+          }}

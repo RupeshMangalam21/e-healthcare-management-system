@@ -124,10 +124,8 @@
     }
     
     }
-
     @media screen and (max-width: 580px){
-    .medical-history-container {
-      width: 80%;
-      margin-left: 40px;
-    }
-  }
+      .medical-history-container {
+        width: 80%;
+        margin-left: 40px;
+      }}
