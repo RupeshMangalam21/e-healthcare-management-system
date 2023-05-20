@@ -55,7 +55,6 @@
 }
 
 
-
 /* Footer */
 .sitefooter
 {
@@ -64,6 +63,7 @@
   font-size:15px;
   line-height:24px;
   color: #fff;
+  margin-top: 25px;
 }
 .sitefooter hr
 {
@@ -117,8 +117,8 @@
 }
 .sitefooter .social-icons
 {
-  text-align:right;
-  margin-right: -230px;
+  margin-right: auto;
+  text-align: right;
 }
 .sitefooter .social-icons a
 {
@@ -150,6 +150,10 @@
   .sitefooter .copyrighttext,.sitefooter .social-icons
   {
     text-align:center
+  }
+  .sitefooter
+  {
+    padding-left: 10px;
   }
 }
 .social-icons
@@ -225,24 +229,7 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Header css */
-
 
 .app__navbar {
   width: 100%;
@@ -279,9 +266,6 @@
   cursor: pointer;
 }
 
-/* .app__navbar-links li:hover {
-  color:#000000;
-} */
 
 .app__navbar-links a{
   color: #ffffff;
@@ -354,6 +338,9 @@
 
 .app__navbar-smallscreen_links {
   list-style: none;
+  text-decoration:none;
+  color:white;
+  
 }
 
 .app__navbar-smallscreen_links li {

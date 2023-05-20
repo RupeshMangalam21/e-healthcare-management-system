@@ -1,18 +1,18 @@
 .medical-history-container{
-    margin-top: 9rem;
-    margin-left: 23px;
-    background-color:#4c0df052;
-    width: 785px;
-    height: 400px;
-    overflow: auto;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
+  background-color: #4c0df052;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.548);
+  height: 400px;
+  margin-left: 60px;
+  margin-top: 9rem;
+  overflow-y: scroll;
+  padding: 15px;
+  width: -webkit-fill-available;
  }
  
 .history-item-info{
       text-align: left;
-      width: 769px;
+      width: auto;
     }
 .button-mh p{
   margin-top: 0.9rem;
@@ -33,13 +33,13 @@
   .button-mh {
     background-color: #ffffffb8!important;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 18.5px;
-    text-align: left;
-    width:750px;
-    border-radius: 10px;
     margin-top: 8px;
     padding: 5px;
+    text-align: left;
+    width: -webkit-fill-available;
   }
   
   .button-mh:hover {
@@ -96,7 +96,7 @@
   
   @media screen and (max-width: 1200px) {
     .medical-history-container,.medical-history-text,.history-item-info {
-      width: 85%;
+      width: 93%;
     }
     .button-mh{
       width: 95%;
@@ -110,14 +110,22 @@
     .medical-history-text{
       font-size: smaller;
     }
-   
-    
   }
   
+  @media screen and (max-width: 780px){
+    .medical-history-container {
+        width: 86%;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .medical-history-text{
       font-size: smaller;
     }
     
-    
     }
+    @media screen and (max-width: 580px){
+      .medical-history-container {
+        width: 80%;
+        margin-left: 40px;
+      }

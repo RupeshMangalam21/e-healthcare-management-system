@@ -28,6 +28,12 @@
     margin-top: 12px;
   }
 
+  @media screen and (max-width: 400px){
+    .sign-out-a{
+    display: none;
+    }
+  }
+
 .sign-out-a{
   font-size: 18px;
   margin-left: 285px;

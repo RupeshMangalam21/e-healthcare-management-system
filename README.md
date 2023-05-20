@@ -8,9 +8,15 @@ Web-based E-Healthcare Management System.
 
 CONTRIBUTIONS:
 
-Not Open for Contributions right now!
+Head over to [Contributing](https://github.com/RupeshMangalam21/e-healthcare-management-system/blob/main/CONTRIBUTING.md) to read the guidelines!
 
-Collaborator Contributions Only!!   
+PULL REQUESTS: 
+
+Head over to [PullRequests](.github/PULL_REQUEST_TEMPLATE.md) for the format of PRs.
+
+ISSUES:
+
+New Issue [template](.github/ISSUE_TEMPLATE/new-issue.md).
 
 CODESPACE:
 
