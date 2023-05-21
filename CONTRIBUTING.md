@@ -17,6 +17,6 @@ Before starting work on a new feature or bug fix, please check if there's an exi
 7. Provide a clear and descriptive title for your pull request.
 8. Include a brief summary of the changes made and the motivation behind them.
 9. Reference any related issues using the issue number (e.g., "Fixes #123").
-10. 10. Await feedback and be prepared to make necessary changes.
+10. Await feedback and be prepared to make necessary changes.
 
 By contributing to this project, you agree to license your work under the project's open-source license.
