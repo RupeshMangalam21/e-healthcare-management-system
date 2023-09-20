@@ -6,6 +6,13 @@ Thank you for considering contributing to our project! To ensure a smooth collab
 
 Before starting work on a new feature or bug fix, please check if there's an existing issue for it. If not, feel free to create a new one, providing as much detail as possible.
 
+**Setup local Development environment**
+1. Fork the repository.
+2. Clone the repository to your local machine.
+3. Create a firebase account and create a new project in it.
+4. Create a copy of .env.example file as .env and add all mentioned fields.
+5. Run npm start command to deploy locally.
+
 **Pull Requests**
 
 1. Fork the repository and create a new branch from the main branch.
