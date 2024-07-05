@@ -16,17 +16,23 @@ const HealthArticle = () => {
   return (
     <div className="Health-Article-container">
       <h2 style={{color:'aliceblue'}}>Latest in Healthcare</h2>
-      <input type="text" placeholder="Search articles..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}className='Health-Article-Search'/>
+      <input 
+        type="text" 
+        placeholder="Search articles..." 
+        value={searchTerm} 
+        onChange={(e) => setSearchTerm(e.target.value)} 
+        className='Health-Article-Search'
+      />
       <div className="Health-Article-list">
-        {data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase())).length > 0 ? (
+        {data.filter((item) => item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())).length > 0 ? (
           <ul>
-            {data.filter((item) => item.title.toLowerCase().includes(searchTerm.toLowerCase())).map((item) => (
+            {data.filter((item) => item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())).map((item) => (
               <li key={item.pubDate}>
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                   <div className="Article-item">
                     <div className="Article-item-info">
                       <h3>{item.title}</h3>
-                      <p>{item.description.slice(0, 120)}...more</p>
+                      <p>{item.description ? item.description.slice(0, 120) : "No description available"}...more</p>
                     </div>
                   </div>
                 </a>
