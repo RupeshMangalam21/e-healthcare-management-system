@@ -26,7 +26,7 @@ const HealthArticle = () => {
                   <div className="Article-item">
                     <div className="Article-item-info">
                       <h3>{item.title}</h3>
-                      <p>{item.description.slice(0, 120)}...more</p>
+                      <p>{String(item.description).slice(0, 120)}...more</p>
                     </div>
                   </div>
                 </a>
